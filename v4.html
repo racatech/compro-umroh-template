@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Al-Haramain Travel — Umroh & Haji dengan Sepenuh Hati</title>
+    <meta name="description"
+        content="Al-Haramain Travel & Tour — Mendampingi tamu-tamu Allah menuju Baitullah sejak 2009. Paket Umroh & Haji premium, terpercaya, dan penuh kehangatan." />
+    <link rel="stylesheet" href="./assets/css/v4.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="#home">
+            <div class="logo">
+                <div class="logo-name">Al-Haramain</div>
+                <div class="logo-tagline">Travel & Tour · Est. 2009</div>
+            </div>
+        </a>
+
+        <div class="nav-center">
+            <a href="#why" class="nav-link" data-t="nav-why">Mengapa Kami</a>
+            <a href="#journey" class="nav-link" data-t="nav-journey">Perjalanan</a>
+            <a href="#packages" class="nav-link" data-t="nav-packages">Paket</a>
+            <a href="#gallery" class="nav-link" data-t="nav-gallery">Galeri</a>
+            <a href="#testi" class="nav-link" data-t="nav-testi">Kesaksian</a>
+            <a href="#contact" class="nav-link" data-t="nav-contact">Hubungi</a>
+        </div>
+
+        <div class="nav-right">
+            <div class="lang-toggle">
+                <button id="btn-id" class="lang-btn active" onclick="setLang('id')">ID</button>
+                <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+            </div>
+            <a href="#contact" class="nav-cta"><span data-t="nav-cta">Konsultasi Gratis</span></a>
+            <button class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile -->
+    <div class="mobile-menu">
+        <a href="#why" class="mobile-nav-link" onclick="closeMenu()" data-t="nav-why">Mengapa Kami</a>
+        <a href="#journey" class="mobile-nav-link" onclick="closeMenu()" data-t="nav-journey">Layanan</a>
+        <a href="#packages" class="mobile-nav-link" onclick="closeMenu()" data-t="nav-packages">Paket</a>
+        <a href="#gallery" class="mobile-nav-link" onclick="closeMenu()" data-t="nav-gallery">Galeri</a>
+        <a href="#testi" class="mobile-nav-link" onclick="closeMenu()" data-t="nav-testi">Kesaksian</a>
+        <a href="#contact" class="mobile-nav-link" onclick="closeMenu()" data-t="nav-contact">Hubungi</a>
+        <a href="#contact" class="mobile-nav-link" onclick="closeMenu()" data-t="nav-cta">Konsultasi Gratis</a>
+    </div>
+
+    <section id="home" class="hero">
+
+        <!-- Left -->
+        <div class="hero-left">
+            <div class="hero-bismillah" data-t="hero-bismillah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ</div>
+
+            <div class="hero-label" data-t="hero-label">Al-Haramain Travel · Est. 2009</div>
+
+            <h1 class="hero-heading">
+                <span data-t="hero-h1a">Setiap Langkah</span><br>
+                <span data-t="hero-h1b">di Tanah Suci</span><br>
+                <em data-t="hero-h1c">Adalah Doa</em>
+            </h1>
+
+            <p class="hero-subtext" data-t="hero-sub">
+                Kami tidak sekadar memberangkatkan Anda. Kami menjaga setiap momen perjalanan ibadah Anda — dengan hati
+                yang tulus, layanan yang hangat, dan doa yang tak putus.
+            </p>
+
+            <div class="hero-btns">
+                <a href="#contact" class="btn-primary"><span data-t="hero-btn1">Mulai Perjalananmu</span></a>
+                <a href="#packages" class="btn-text" data-t="hero-btn2">Lihat Paket</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-num" data-count="15+" data-t="hero-stat1-n">15+</div>
+                    <div class="hero-stat-label" data-t="hero-stat1-l">Tahun melayani</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num" data-t="hero-stat2-n">12.000+</div>
+                    <div class="hero-stat-label" data-t="hero-stat2-l">Jiwa diberangkatkan</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num" data-t="hero-stat3-n">98%</div>
+                    <div class="hero-stat-label" data-t="hero-stat3-l">Pulang dengan hati penuh</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right -->
+        <div class="hero-right">
+            <div class="hero-right-bg"></div>
+            <div class="hero-right-inner">
+                <div class="corner corner-tl"></div>
+                <div class="corner corner-tr"></div>
+                <div class="corner corner-bl"></div>
+                <div class="corner corner-br"></div>
+                <div class="hero-ornament-wrap">
+                    <div class="hero-ornament-frame"></div>
+                    <div class="hero-ornament-content">
+                        <div class="hero-arabic-large">الحرمين</div>
+                        <div class="hero-ornament-line"></div>
+                        <div class="hero-ornament-label">Makkah · Madinah · Indonesia</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll hint -->
+        <div class="hero-scroll-hint">
+            <div class="scroll-pill">
+                <div class="scroll-pip"></div>
+            </div>
+            <span class="scroll-hint-text">Gulir ke bawah</span>
+        </div>
+    </section>
+
+    <div class="ornament-row">
+        <div class="ornament-dash"></div>
+        <span class="ornament-symbol">✦</span>
+        <div class="ornament-dash"></div>
+        <span class="ornament-symbol"
+            style="font-family:'Tajawal',sans-serif;font-size:0.8rem;color:var(--brown-mute);">الرَّحِيمِ</span>
+        <div class="ornament-dash"></div>
+        <span class="ornament-symbol">✦</span>
+        <div class="ornament-dash"></div>
+    </div>
+
+    <section id="why" class="why-section section-pad">
+        <div class="container">
+
+            <div data-reveal="up">
+                <div class="eyebrow" data-t="why-eye">Mengapa Kami</div>
+                <h2 class="section-heading" data-t="why-h">Kepercayaan yang <em>Dibangun</em> Bertahun-tahun</h2>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card" data-reveal="up" data-delay="1">
+                    <span class="why-num" data-t="why1-n">i.</span>
+                    <h3 class="why-title" data-t="why1-t">Pelayanan dari <em>Hati</em></h3>
+                    <p class="why-body" data-t="why1-b">Bagi kami, setiap jamaah bukan sekadar tamu — mereka adalah
+                        amanah. Kami menemani dengan kesabaran, seperti keluarga menemani keluarga.</p>
+                </div>
+                <div class="why-card" data-reveal="up" data-delay="2">
+                    <span class="why-num" data-t="why2-n">ii.</span>
+                    <h3 class="why-title" data-t="why2-t">Pembimbing <em>Terpercaya</em></h3>
+                    <p class="why-body" data-t="why2-b">Setiap rombongan didampingi ustadz bersertifikat Kemenag RI yang
+                        tidak hanya memandu ritual, tapi juga meresapi kedalaman spiritual setiap momen.</p>
+                </div>
+                <div class="why-card" data-reveal="up" data-delay="3">
+                    <span class="why-num" data-t="why3-n">iii.</span>
+                    <h3 class="why-title" data-t="why3-t">Transparansi <em>Tanpa Kejutan</em></h3>
+                    <p class="why-body" data-t="why3-b">Tidak ada biaya tersembunyi. Tidak ada janji kosong. Apa yang
+                        tertulis adalah apa yang Anda dapatkan — kami jaga kepercayaan itu.</p>
+                </div>
+                <div class="why-card" data-reveal="up" data-delay="4">
+                    <span class="why-num" data-t="why4-n">iv.</span>
+                    <h3 class="why-title" data-t="why4-t">15 Tahun <em>Pengalaman</em></h3>
+                    <p class="why-body" data-t="why4-b">Sejak 2009, lebih dari 12.000 jamaah telah kami antarkan. Setiap
+                        perjalanan mengajarkan kami untuk lebih baik dari yang sebelumnya.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="journey" class="journey-section section-pad">
+        <div class="container">
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:0;"
+                data-reveal="up">
+                <div>
+                    <div class="eyebrow" data-t="journey-eye">Layanan Kami</div>
+                    <h2 class="section-heading" data-t="journey-h">Kami Ada di <em>Setiap Tahap</em> Ibadah Anda</h2>
+                </div>
+                <div style="padding-bottom:6px;">
+                    <p class="body-text" style="max-width:400px;">Ibadah yang tenang lahir dari persiapan yang matang
+                        dan pendampingan yang tak terputus.</p>
+                </div>
+            </div>
+
+            <div class="journey-list">
+
+                <div class="journey-item" data-reveal="up" data-delay="1">
+                    <div class="journey-num" data-t="j1-t">01</div>
+                    <div class="journey-content">
+                        <div class="journey-header">
+                            <h3 class="journey-title" data-t="j1-t">Umroh Premium</h3>
+                            <span class="journey-tag" data-t="j1-tag">Sepanjang Tahun</span>
+                        </div>
+                        <p class="journey-desc" data-t="j1-d">Dari pengurusan visa hingga kepulangan, kami tangani
+                            segalanya. Hotel pilihan dekat Masjidil Haram, penerbangan langsung, dan pembimbing yang tak
+                            meninggalkan sisi Anda.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item" data-reveal="up" data-delay="2">
+                    <div class="journey-num">02</div>
+                    <div class="journey-content">
+                        <div class="journey-header">
+                            <h3 class="journey-title" data-t="j2-t">Haji Plus</h3>
+                            <span class="journey-tag" data-t="j2-tag">Antrean Lebih Singkat</span>
+                        </div>
+                        <p class="journey-desc" data-t="j2-d">Program haji plus kami menawarkan masa tunggu lebih pendek
+                            dengan fasilitas yang jauh melampaui standar. Wujudkan rukun Islam kelima dengan tenang.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item" data-reveal="up" data-delay="3">
+                    <div class="journey-num">03</div>
+                    <div class="journey-content">
+                        <div class="journey-header">
+                            <h3 class="journey-title" data-t="j3-t">Bimbingan Manasik</h3>
+                            <span class="journey-tag" data-t="j3-tag">Tatap Muka &amp; Online</span>
+                        </div>
+                        <p class="journey-desc" data-t="j3-d">Sebelum berangkat, kami siapkan jiwa dan raga Anda. Sesi
+                            manasik intensif, simulasi tawaf, sa'i, dan wukuf dipandu langsung oleh ustadz kami.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item" data-reveal="up" data-delay="4">
+                    <div class="journey-num">04</div>
+                    <div class="journey-content">
+                        <div class="journey-header">
+                            <h3 class="journey-title" data-t="j4-t">Wisata Ziarah</h3>
+                            <span class="journey-tag" data-t="j4-tag">Dipandu Profesional</span>
+                        </div>
+                        <p class="journey-desc" data-t="j4-d">Jejaki tempat-tempat yang pernah diinjak Rasulullah ﷺ.
+                            Setiap sudut Makkah dan Madinah menyimpan kisah — dan kami yang akan menceritakannya.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="quote-inner" data-reveal="fade">
+            <span class="quote-mark-dec">"</span>
+            <p class="quote-text" data-t="quote-text">
+                Dan berserulah kepada manusia untuk mengerjakan haji, niscaya mereka akan datang kepadamu dengan
+                berjalan kaki, dan mengendarai unta yang kurus yang datang dari segenap penjuru yang jauh.
+            </p>
+            <span class="quote-source" data-t="quote-src">Surah Al-Hajj: 27</span>
+        </div>
+    </section>
+
+    <section id="packages" class="packages-section section-pad">
+        <div class="container">
+
+            <div style="text-align:center;max-width:540px;margin:0 auto;" data-reveal="up">
+                <div class="eyebrow" style="justify-content:center;" data-t="pkg-eye">Paket Perjalanan</div>
+                <h2 class="section-heading" data-t="pkg-h">Pilih yang <em>Sesuai</em> dengan Jiwamu</h2>
+            </div>
+
+            <div class="packages-grid">
+
+                <!-- Paket 1 -->
+                <div class="pkg-card" data-reveal="up" data-delay="1">
+                    <div class="pkg-tier" data-t="p1-tier">Paket Reguler</div>
+                    <div class="pkg-name" data-t="p1-name">Umroh Bersama</div>
+                    <div class="pkg-price-block">
+                        <div class="pkg-price">Rp 25 juta</div>
+                        <div class="pkg-price-note" data-t="per-pax">per orang</div>
+                    </div>
+                    <ul class="pkg-features">
+                        <li class="pkg-feature" data-t="p1-f1">Penerbangan PP kelas ekonomi</li>
+                        <li class="pkg-feature" data-t="p1-f2">Hotel bintang 3, ±500m Ka'bah</li>
+                        <li class="pkg-feature" data-t="p1-f3">Konsumsi 3× sehari (masakan Indonesia)</li>
+                        <li class="pkg-feature" data-t="p1-f4">Pembimbing ibadah bersertifikat</li>
+                        <li class="pkg-feature" data-t="p1-f5">Perlengkapan ibadah lengkap</li>
+                        <li class="pkg-feature" data-t="p1-f6">Durasi 9 hari 8 malam</li>
+                    </ul>
+                    <a href="#contact" class="pkg-btn pkg-btn-line"><span data-t="p1-btn">Pilih Paket Ini</span></a>
+                </div>
+
+                <!-- Paket 2 (Featured) -->
+                <div class="pkg-card featured" data-reveal="scale" data-delay="2">
+                    <div class="pkg-seal" data-t="p2-seal">Paling Dipilih</div>
+                    <div class="pkg-tier" data-t="p2-tier">Paket Unggulan</div>
+                    <div class="pkg-name" data-t="p2-name">Umroh Premium</div>
+                    <div class="pkg-price-block">
+                        <div class="pkg-price">Rp 38 juta</div>
+                        <div class="pkg-price-note" data-t="per-pax">per orang</div>
+                    </div>
+                    <ul class="pkg-features">
+                        <li class="pkg-feature" data-t="p2-f1">Penerbangan langsung kelas bisnis</li>
+                        <li class="pkg-feature" data-t="p2-f2">Hotel bintang 5, &lt;200m dari Ka'bah</li>
+                        <li class="pkg-feature" data-t="p2-f3">Makan 3× + layanan kamar</li>
+                        <li class="pkg-feature" data-t="p2-f4">Pembimbing pribadi (1 ustadz : 15 jamaah)</li>
+                        <li class="pkg-feature" data-t="p2-f5">City tour Makkah &amp; Madinah</li>
+                        <li class="pkg-feature" data-t="p2-f6">Durasi 12 hari 11 malam</li>
+                        <li class="pkg-feature" data-t="p2-f7">Asuransi jiwa &amp; kesehatan penuh</li>
+                    </ul>
+                    <a href="#contact" class="pkg-btn pkg-btn-fill"><span data-t="p2-btn">Pilih Paket Ini</span></a>
+                </div>
+
+                <!-- Paket 3 -->
+                <div class="pkg-card" data-reveal="up" data-delay="3">
+                    <div class="pkg-tier" data-t="p3-tier">Paket Eksklusif</div>
+                    <div class="pkg-name" data-t="p3-name">VIP Royal</div>
+                    <div class="pkg-price-block">
+                        <div class="pkg-price">Rp 65 juta</div>
+                        <div class="pkg-price-note" data-t="per-pax">per orang</div>
+                    </div>
+                    <ul class="pkg-features">
+                        <li class="pkg-feature" data-t="p3-f1">Penerbangan first class / charter</li>
+                        <li class="pkg-feature" data-t="p3-f2">Grand Hyatt atau Raffles Makkah</li>
+                        <li class="pkg-feature" data-t="p3-f3">Layanan butler &amp; concierge 24 jam</li>
+                        <li class="pkg-feature" data-t="p3-f4">Pembimbing pribadi eksklusif</li>
+                        <li class="pkg-feature" data-t="p3-f5">Transportasi armada Mercedes-Benz</li>
+                        <li class="pkg-feature" data-t="p3-f6">Durasi 14 hari 13 malam</li>
+                        <li class="pkg-feature" data-t="p3-f7">Akses area Tawaf VIP</li>
+                    </ul>
+                    <a href="#contact" class="pkg-btn pkg-btn-line"><span data-t="p3-btn">Pilih Paket Ini</span></a>
+                </div>
+
+            </div>
+
+            <p class="pkg-note" data-t="pkg-note">Harga sewaktu-waktu dapat berubah. Hubungi kami untuk penawaran
+                terkini.</p>
+
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section section-pad">
+        <div class="container" style="margin-bottom:0;">
+            <div data-reveal="up">
+                <div class="eyebrow" data-t="gal-eye">Sekilas Perjalanan</div>
+                <h2 class="section-heading" data-t="gal-h">Momen yang <em>Tak Terlupakan</em></h2>
+            </div>
+        </div>
+
+        <!-- Draggable film strip -->
+        <div class="gallery-strip" style="margin-top:52px;align-items:flex-start;cursor:grab;">
+
+            <div class="gallery-frame gallery-frame-tall gb-1" data-reveal="up" data-delay="1">
+                <div class="gallery-frame-inner"><span class="gallery-icon-lg">🕋</span></div>
+                <div class="gallery-caption" data-t="gc1">Masjidil Haram</div>
+            </div>
+
+            <div class="gallery-frame gallery-frame-wide gb-2" style="align-self:flex-end;" data-reveal="up"
+                data-delay="2">
+                <div class="gallery-frame-inner"><span class="gallery-icon-lg">🌙</span></div>
+                <div class="gallery-caption" data-t="gc2">Madinah Al-Munawwarah</div>
+            </div>
+
+            <div class="gallery-frame gallery-frame-sq gb-3" data-reveal="up" data-delay="1">
+                <div class="gallery-frame-inner"><span class="gallery-icon-lg">🌄</span></div>
+                <div class="gallery-caption" data-t="gc3">Wukuf di Arafah</div>
+            </div>
+
+            <div class="gallery-frame gallery-frame-tall gb-4" data-reveal="up" data-delay="2">
+                <div class="gallery-frame-inner"><span class="gallery-icon-lg">🤲</span></div>
+                <div class="gallery-caption" data-t="gc4">Jamaah kami berdoa</div>
+            </div>
+
+            <div class="gallery-frame gallery-frame-sq gb-5" style="align-self:flex-end;" data-reveal="up"
+                data-delay="1">
+                <div class="gallery-frame-inner"><span class="gallery-icon-lg">🌅</span></div>
+                <div class="gallery-caption" data-t="gc5">Fajar di Makkah</div>
+            </div>
+
+            <div class="gallery-frame gallery-frame-wide gb-6" data-reveal="up" data-delay="2">
+                <div class="gallery-frame-inner"><span class="gallery-icon-lg">🏛️</span></div>
+                <div class="gallery-caption" data-t="gc6">Masjid Nabawi</div>
+            </div>
+
+            <div class="gallery-frame gallery-frame-sq gb-7" style="align-self:flex-end;" data-reveal="up"
+                data-delay="3">
+                <div class="gallery-frame-inner"><span class="gallery-icon-lg">✈️</span></div>
+                <div class="gallery-caption" data-t="gc7">Tiba di Tanah Suci</div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="testi" class="testi-section section-pad">
+        <div class="container">
+
+            <div data-reveal="up">
+                <div class="eyebrow" data-t="testi-eye">Kesaksian Jamaah</div>
+                <h2 class="section-heading" data-t="testi-h">Cerita yang <em>Menggerakkan Hati</em></h2>
+            </div>
+
+            <div class="testi-list">
+
+                <div class="testi-item" data-reveal="up" data-delay="1">
+                    <div class="testi-meta">
+                        <div class="testi-name" data-t="t1-n">Hj. Aminah Kusuma</div>
+                        <div class="testi-origin" data-t="t1-o">Yogyakarta · Umroh 2023</div>
+                        <div class="testi-stars">★★★★★</div>
+                    </div>
+                    <blockquote class="testi-quote" data-t="t1-q">
+                        Saya berangkat dengan penuh kekhawatiran — ini perjalanan pertama saya, dan saya pergi sendiri.
+                        Tapi Al-Haramain membuat saya merasa tidak pernah sendirian sedetik pun. Pulang dengan air mata
+                        syukur.
+                    </blockquote>
+                </div>
+
+                <div class="testi-item" data-reveal="up" data-delay="2">
+                    <div class="testi-meta">
+                        <div class="testi-name" data-t="t2-n">Ahmad Rifai</div>
+                        <div class="testi-origin" data-t="t2-o">Surabaya · Umroh 2023</div>
+                        <div class="testi-stars">★★★★★</div>
+                    </div>
+                    <blockquote class="testi-quote" data-t="t2-q">
+                        Bapak saya sudah 72 tahun dan ingin umroh sebelum tutup usia. Al-Haramain menyiapkan segalanya
+                        dengan cermat — kursi roda, pendamping khusus, kamar di lantai dasar. Bapak tawaf dengan senyum
+                        yang tak pernah saya lihat sebelumnya.
+                    </blockquote>
+                </div>
+
+                <div class="testi-item" data-reveal="up" data-delay="3">
+                    <div class="testi-meta">
+                        <div class="testi-name" data-t="t3-n">Dr. Sari Dewanti</div>
+                        <div class="testi-origin" data-t="t3-o">Jakarta · VIP Royal 2024</div>
+                        <div class="testi-stars">★★★★★</div>
+                    </div>
+                    <blockquote class="testi-quote" data-t="t3-q">
+                        Paket VIP Royal bukan kemewahan biasa — ia adalah ketenangan. Saya bisa fokus beribadah tanpa
+                        satu pun urusan logistik yang mengganggu. Itu harga yang tidak ternilai.
+                    </blockquote>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section section-pad">
+        <div class="container">
+
+            <div data-reveal="up">
+                <div class="eyebrow" data-t="contact-eye">Hubungi Kami</div>
+                <h2 class="section-heading" data-t="contact-h">Perjalananmu <em>Dimulai</em> dari Sini</h2>
+            </div>
+
+            <div class="contact-layout">
+
+                <!-- Left info -->
+                <div data-reveal="left">
+                    <p class="contact-intro" data-t="contact-intro">
+                        Ceritakan impian ibadahmu. Tim kami akan membantu merancang perjalanan yang paling sesuai —
+                        dengan hati yang siap mendengar.
+                    </p>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail-label" data-t="cd1-l">Kantor Kami</div>
+                        <div class="contact-detail-val" data-t="cd1-v">Jl. Sudirman No. 88, Lantai 5<br>Jakarta Pusat
+                            10220</div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail-label" data-t="cd2-l">WhatsApp</div>
+                        <div class="contact-detail-val">
+                            <a href="https://wa.me/6281234567890" data-t="cd2-v">+62 812-3456-7890</a>
+                        </div>
+                        <div class="contact-detail-note" data-t="cd2-n">Siap melayani 24 jam</div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail-label" data-t="cd3-l">Surel</div>
+                        <div class="contact-detail-val">
+                            <a href="mailto:halo@alharamain-travel.co.id"
+                                data-t="cd3-v">halo@alharamain-travel.co.id</a>
+                        </div>
+                        <div class="contact-detail-note" data-t="cd3-n">Dibalas dalam 1×24 jam</div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail-label" data-t="cd4-l">Jam Pelayanan</div>
+                        <div class="contact-detail-val" data-t="cd4-v">Senin–Jumat: 08.00–17.00 WIB<br>Sabtu:
+                            08.00–13.00 WIB</div>
+                    </div>
+                </div>
+
+                <!-- Right form -->
+                <div class="contact-form" data-reveal="right">
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label class="form-label" data-t="fl-name">Nama lengkap</label>
+                            <input type="text" class="form-field" data-t="ph-name" placeholder="Nama Anda" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-t="fl-wa">Nomor WhatsApp</label>
+                            <input type="tel" class="form-field" data-t="ph-wa" placeholder="+62..." />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-t="fl-email">Alamat surel</label>
+                        <input type="email" class="form-field" data-t="ph-email" placeholder="nama@email.com" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-t="fl-pkg">Paket yang diminati</label>
+                        <select class="form-field">
+                            <option data-t="opt0">Pilih paket...</option>
+                            <option data-t="opt1">Umroh Bersama — Rp 25 juta</option>
+                            <option data-t="opt2">Umroh Premium — Rp 38 juta</option>
+                            <option data-t="opt3">VIP Royal — Rp 65 juta</option>
+                            <option data-t="opt4">Haji Plus</option>
+                            <option data-t="opt5">Konsultasi &amp; Informasi Lainnya</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-t="fl-msg">Ceritakan kebutuhanmu</label>
+                        <textarea class="form-field textarea" data-t="ph-msg"
+                            placeholder="Misalnya: saya ingin umroh bersama ibu saya yang berusia 65 tahun..."></textarea>
+                    </div>
+
+                    <button class="form-submit" onclick="submitForm()">
+                        <span data-t="submit">Kirim Pesan</span>
+                    </button>
+
+                    <div class="form-success-msg" id="form-success">
+                        <span data-t="success-msg">Terima kasih. Pesan Anda sudah kami terima — insyaAllah tim kami akan
+                            segera menghubungi Anda.</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+                    <div class="footer-brand-name">Al-Haramain</div>
+                    <div class="footer-brand-sub">Travel &amp; Tour · Est. 2009</div>
+                    <p class="footer-brand-body" data-t="ft-body">
+                        Mendampingi tamu-tamu Allah menuju Baitullah dengan sepenuh hati sejak 2009.
+                    </p>
+                    <div class="footer-arabic-mark" data-t="ft-arabic">الحرمين للسياحة والسفر</div>
+                </div>
+
+                <div>
+                    <div class="footer-col-label" data-t="ft-col1">Jelajahi</div>
+                    <ul class="footer-nav-list">
+                        <li><a href="#why" class="footer-nav-link" data-t="ftl1">Tentang Kami</a></li>
+                        <li><a href="#packages" class="footer-nav-link" data-t="ftl2">Paket Perjalanan</a></li>
+                        <li><a href="#testi" class="footer-nav-link" data-t="ftl3">Kesaksian Jamaah</a></li>
+                        <li><a href="#gallery" class="footer-nav-link" data-t="ftl4">Galeri</a></li>
+                        <li><a href="#contact" class="footer-nav-link" data-t="ftl5">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer-col-label" data-t="ft-col2">Layanan</div>
+                    <ul class="footer-nav-list">
+                        <li><a href="#packages" class="footer-nav-link" data-t="fts1">Umroh Reguler</a></li>
+                        <li><a href="#packages" class="footer-nav-link" data-t="fts2">Umroh Premium</a></li>
+                        <li><a href="#packages" class="footer-nav-link" data-t="fts3">VIP Royal</a></li>
+                        <li><a href="#journey" class="footer-nav-link" data-t="fts4">Haji Plus</a></li>
+                        <li><a href="#journey" class="footer-nav-link" data-t="fts5">Wisata Ziarah</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer-col-label" data-t="ft-col3">Legalitas</div>
+                    <div class="footer-cert-items">
+                        <div class="footer-cert-item" data-t="ftc1">Kemenag RI · No. D/458/2009</div>
+                        <div class="footer-cert-item" data-t="ftc2">IATA Accredited Agent</div>
+                        <div class="footer-cert-item" data-t="ftc3">Anggota AMPHURI</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <span class="footer-copy" data-t="copy">© 2024 Al-Haramain Travel &amp; Tour</span>
+                <div class="footer-socials">
+                    <a href="#" class="footer-social" data-t="soc1">Instagram</a>
+                    <a href="#" class="footer-social" data-t="soc2">Facebook</a>
+                    <a href="#" class="footer-social" data-t="soc3">YouTube</a>
+                </div>
+                <div class="footer-legal">
+                    <a href="#" data-t="priv">Privasi</a>
+                    <a href="#" data-t="terms">Ketentuan</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="./assets/js/v4.js"></script>
+</body>
+
+</html>
