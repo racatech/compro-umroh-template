@@ -1,0 +1,2303 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barokah Umroh — Perjalanan Suci Penuh Berkah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --brown-950: #1A0E08;
+            --brown-900: #2C1810;
+            --brown-800: #3D2314;
+            --brown-700: #5C3420;
+            --brown-600: #8B5E3C;
+            --brown-500: #A67C5B;
+            --brown-400: #C4956A;
+            --gold-deep: #B8860B;
+            --gold: #D4AF7A;
+            --gold-light: #E8D5B0;
+            --cream-dark: #EDE0CC;
+            --cream: #F5EDE0;
+            --cream-light: #FDF8F2;
+            --white: #FDFAF6;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background-color: var(--white);
+            color: var(--brown-950);
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--brown-500);
+            border-radius: 3px;
+        }
+
+        /* NAVBAR */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            transition: all 0.5s ease;
+        }
+
+        #navbar.scrolled {
+            background: rgba(26, 14, 8, 0.97);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(212, 175, 122, 0.2);
+        }
+
+        .nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(212, 175, 122, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-logo-icon i {
+            color: var(--gold);
+            font-size: 15px;
+        }
+
+        .nav-logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(253, 250, 246, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 9px 26px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--brown-900);
+        }
+
+        .hamburger-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger-btn span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--gold-light);
+            transition: all 0.3s;
+        }
+
+        .hamburger-btn.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 4.5px);
+        }
+
+        .hamburger-btn.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-btn.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -4.5px);
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 150;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s;
+        }
+
+        .mobile-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 280px;
+            height: 100vh;
+            background: var(--brown-950);
+            border-left: 1px solid rgba(212, 175, 122, 0.15);
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            padding: 100px 36px 40px;
+        }
+
+        .mobile-nav.open {
+            transform: translateX(0);
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 14px 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--cream);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(212, 175, 122, 0.12);
+            transition: color 0.3s, padding-left 0.3s;
+        }
+
+        .mobile-nav a:hover {
+            color: var(--gold);
+            padding-left: 8px;
+        }
+
+        /* HERO */
+        #home {
+            position: relative;
+            min-height: 100vh;
+            background: var(--brown-950);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 15% 55%, rgba(139, 94, 60, 0.35) 0%, transparent 55%), radial-gradient(ellipse at 85% 15%, rgba(212, 175, 122, 0.1) 0%, transparent 50%), radial-gradient(ellipse at 65% 85%, rgba(92, 52, 32, 0.45) 0%, transparent 45%);
+        }
+
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D4AF7A'%3E%3Cpath d='M30 5l5 15h15l-12 9 5 15-13-9-13 9 5-15-12-9h15z'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 60px 60px;
+        }
+
+        .hero-rings {
+            position: absolute;
+            right: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 650px;
+            height: 650px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 122, 0.1);
+            pointer-events: none;
+        }
+
+        .hero-rings::before {
+            content: '';
+            position: absolute;
+            inset: 50px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 122, 0.07);
+        }
+
+        .hero-rings::after {
+            content: '';
+            position: absolute;
+            inset: 100px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 122, 0.05);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 80px 32px 0;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 18px;
+            border: 1px solid rgba(212, 175, 122, 0.3);
+            color: var(--gold);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 36px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(50px, 8vw, 108px);
+            font-weight: 300;
+            line-height: 1.0;
+            color: var(--white);
+            letter-spacing: -0.01em;
+            margin-bottom: 28px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.4s forwards;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .hero-title .sub {
+            display: block;
+            color: rgba(232, 213, 176, 0.7);
+            font-size: 0.6em;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            margin-top: 8px;
+        }
+
+        .hero-desc {
+            max-width: 520px;
+            font-size: 15px;
+            line-height: 1.9;
+            color: rgba(245, 237, 224, 0.55);
+            font-weight: 300;
+            margin-bottom: 48px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.6s forwards;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.8s forwards;
+        }
+
+        .btn-gold {
+            padding: 15px 38px;
+            background: var(--gold);
+            color: var(--brown-900);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(212, 175, 122, 0.3);
+        }
+
+        .btn-outline {
+            padding: 15px 38px;
+            background: transparent;
+            color: rgba(232, 213, 176, 0.8);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border: 1px solid rgba(212, 175, 122, 0.35);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            position: absolute;
+            bottom: 56px;
+            right: 80px;
+            display: flex;
+            gap: 56px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 1s forwards;
+        }
+
+        .hero-stat-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 40px;
+            font-weight: 500;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(245, 237, 224, 0.4);
+            margin-top: 5px;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 36px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: rgba(212, 175, 122, 0.4);
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeIn 1s ease 1.5s forwards;
+        }
+
+        .hero-scroll-line {
+            width: 1px;
+            height: 36px;
+            background: linear-gradient(to bottom, rgba(212, 175, 122, 0.5), transparent);
+            animation: pulse 2s ease infinite;
+        }
+
+        /* SECTION SHARED */
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--brown-600);
+            margin-bottom: 18px;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 22px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(36px, 4.5vw, 58px);
+            font-weight: 400;
+            line-height: 1.12;
+            color: var(--brown-900);
+            letter-spacing: -0.01em;
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--brown-600);
+        }
+
+        /* ABOUT */
+        #about {
+            background: var(--white);
+            padding: 110px 0;
+            overflow: hidden;
+        }
+
+        .about-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .about-card-main {
+            background: var(--brown-900);
+            padding: 56px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card-main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 40px;
+            right: 40px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        .about-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-style: italic;
+            font-weight: 300;
+            color: var(--cream);
+            line-height: 1.65;
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-quote-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-quote-line {
+            width: 28px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .about-quote-label {
+            font-size: 10px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .about-stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            margin-top: 1px;
+            background: rgba(212, 175, 122, 0.15);
+        }
+
+        .about-stat-box {
+            background: var(--cream-light);
+            padding: 28px 32px;
+            transition: background 0.3s;
+            cursor: default;
+        }
+
+        .about-stat-box:hover {
+            background: var(--cream);
+        }
+
+        .about-stat-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: 500;
+            color: var(--brown-700);
+            line-height: 1;
+        }
+
+        .about-stat-lbl {
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--brown-500);
+            margin-top: 6px;
+        }
+
+        .about-text {
+            font-size: 15px;
+            line-height: 1.9;
+            color: var(--brown-500);
+            margin: 22px 0 36px;
+            font-weight: 300;
+        }
+
+        .about-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid var(--cream-dark);
+        }
+
+        .about-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--cream-dark);
+            transition: padding-left 0.3s;
+            cursor: default;
+        }
+
+        .about-list li:hover {
+            padding-left: 6px;
+        }
+
+        .about-list-icon {
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+            border: 1px solid var(--gold-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-deep);
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+
+        .about-list li:hover .about-list-icon {
+            background: var(--brown-900);
+            border-color: var(--brown-900);
+            color: var(--gold);
+        }
+
+        .about-list h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--brown-800);
+            letter-spacing: 0.02em;
+            margin-bottom: 3px;
+        }
+
+        .about-list p {
+            font-size: 12px;
+            color: var(--brown-500);
+            line-height: 1.6;
+        }
+
+        /* SERVICES */
+        #services {
+            background: var(--brown-950);
+            padding: 110px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #services::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D4AF7A'%3E%3Cpath d='M20 2l3 9h9l-7 5 3 9-8-6-8 6 3-9-7-5h9z'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 40px 40px;
+        }
+
+        .services-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 72px;
+        }
+
+        .services-header .section-tag {
+            justify-content: center;
+            color: rgba(212, 175, 122, 0.7);
+        }
+
+        .services-header .section-tag::before {
+            background: var(--gold);
+        }
+
+        .services-header .section-title {
+            color: var(--white);
+        }
+
+        .services-header .section-title em {
+            color: var(--gold);
+        }
+
+        .services-header p {
+            margin-top: 18px;
+            font-size: 15px;
+            color: rgba(245, 237, 224, 0.4);
+            font-weight: 300;
+            max-width: 440px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(212, 175, 122, 0.1);
+        }
+
+        .service-card {
+            background: rgba(44, 24, 16, 0.9);
+            padding: 44px 32px;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.4s;
+            cursor: default;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            background: rgba(61, 35, 20, 0.98);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            font-weight: 300;
+            color: rgba(212, 175, 122, 0.07);
+            line-height: 1;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            transition: color 0.4s;
+        }
+
+        .service-card:hover .service-num {
+            color: rgba(212, 175, 122, 0.13);
+        }
+
+        .service-icon-wrap {
+            width: 52px;
+            height: 52px;
+            border: 1px solid rgba(212, 175, 122, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 18px;
+            margin-bottom: 24px;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .service-icon-wrap {
+            background: var(--gold);
+            color: var(--brown-900);
+            border-color: var(--gold);
+        }
+
+        .service-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 21px;
+            font-weight: 500;
+            color: var(--cream);
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .service-desc {
+            font-size: 12px;
+            line-height: 1.8;
+            color: rgba(245, 237, 224, 0.4);
+            font-weight: 300;
+            margin-bottom: 22px;
+        }
+
+        .service-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 11px;
+            color: rgba(212, 175, 122, 0.6);
+            letter-spacing: 0.02em;
+        }
+
+        .service-list li::before {
+            content: '—';
+            color: var(--gold);
+            font-size: 9px;
+        }
+
+        /* PACKAGES */
+        #packages {
+            background: var(--cream-light);
+            padding: 110px 0;
+        }
+
+        .packages-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .packages-header {
+            text-align: center;
+            margin-bottom: 72px;
+        }
+
+        .packages-header .section-tag {
+            justify-content: center;
+        }
+
+        .packages-header p {
+            margin-top: 14px;
+            font-size: 14px;
+            color: var(--brown-500);
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--gold-light);
+        }
+
+        .pkg {
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pkg:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 28px 55px rgba(44, 24, 16, 0.14);
+            z-index: 2;
+        }
+
+        .pkg.featured {
+            background: var(--brown-900);
+        }
+
+        .pkg-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 7px 18px;
+            background: var(--gold);
+            color: var(--brown-900);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .pkg-header {
+            padding: 44px 36px 30px;
+            border-bottom: 1px solid var(--cream-dark);
+        }
+
+        .pkg.featured .pkg-header {
+            border-bottom-color: rgba(212, 175, 122, 0.18);
+        }
+
+        .pkg-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 27px;
+            font-weight: 500;
+            color: var(--brown-900);
+            margin-bottom: 5px;
+        }
+
+        .pkg.featured .pkg-name {
+            color: var(--white);
+        }
+
+        .pkg-duration {
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--brown-500);
+        }
+
+        .pkg.featured .pkg-duration {
+            color: rgba(212, 175, 122, 0.5);
+        }
+
+        .pkg-price-wrap {
+            padding: 28px 36px;
+            border-bottom: 1px solid var(--cream-dark);
+        }
+
+        .pkg.featured .pkg-price-wrap {
+            border-bottom-color: rgba(212, 175, 122, 0.18);
+        }
+
+        .pkg-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 44px;
+            font-weight: 400;
+            color: var(--brown-700);
+            line-height: 1;
+        }
+
+        .pkg.featured .pkg-price {
+            color: var(--gold);
+        }
+
+        .pkg-price sup {
+            font-size: 18px;
+            vertical-align: super;
+        }
+
+        .pkg-price-note {
+            font-size: 11px;
+            color: var(--brown-500);
+            margin-top: 5px;
+        }
+
+        .pkg.featured .pkg-price-note {
+            color: rgba(212, 175, 122, 0.45);
+        }
+
+        .pkg-features {
+            padding: 28px 36px 36px;
+        }
+
+        .pkg-features ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        .pkg-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            font-size: 13px;
+            color: var(--brown-600);
+            line-height: 1.5;
+        }
+
+        .pkg.featured .pkg-features li {
+            color: rgba(245, 237, 224, 0.65);
+        }
+
+        .pkg-features li i {
+            color: var(--gold-deep);
+            font-size: 10px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .pkg.featured .pkg-features li i {
+            color: var(--gold);
+        }
+
+        .pkg-cta {
+            padding: 0 36px 36px;
+        }
+
+        .pkg-btn {
+            width: 100%;
+            padding: 14px;
+            font-family: 'Jost', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border: 1px solid var(--brown-700);
+            background: transparent;
+            color: var(--brown-700);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .pkg-btn:hover {
+            background: var(--brown-900);
+            border-color: var(--brown-900);
+            color: var(--white);
+        }
+
+        .pkg.featured .pkg-btn {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--brown-900);
+        }
+
+        .pkg.featured .pkg-btn:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+        }
+
+        .strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 56px;
+            border: 1px solid var(--cream-dark);
+        }
+
+        .strip-item {
+            padding: 32px 28px;
+            border-right: 1px solid var(--cream-dark);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: background 0.3s;
+            cursor: default;
+        }
+
+        .strip-item:last-child {
+            border-right: none;
+        }
+
+        .strip-item:hover {
+            background: var(--cream);
+        }
+
+        .strip-item i {
+            color: var(--gold-deep);
+            font-size: 17px;
+        }
+
+        .strip-item h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--brown-800);
+            letter-spacing: 0.02em;
+        }
+
+        .strip-item p {
+            font-size: 12px;
+            color: var(--brown-500);
+            line-height: 1.6;
+        }
+
+        /* TESTIMONIALS */
+        #testimonials {
+            background: var(--white);
+            padding: 110px 0;
+        }
+
+        .testimonials-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 72px;
+        }
+
+        .testimonials-header .section-tag {
+            justify-content: center;
+        }
+
+        .tgrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--cream-dark);
+        }
+
+        .tcard {
+            background: var(--white);
+            padding: 44px 36px;
+            transition: background 0.3s;
+            cursor: default;
+        }
+
+        .tcard:hover {
+            background: var(--cream-light);
+        }
+
+        .tquote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 72px;
+            color: var(--cream-dark);
+            line-height: 0.6;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .ttext {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            font-style: italic;
+            color: var(--brown-700);
+            line-height: 1.75;
+            margin-bottom: 28px;
+        }
+
+        .tstars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 22px;
+        }
+
+        .tstars i {
+            color: var(--gold-deep);
+            font-size: 11px;
+        }
+
+        .tauthor {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .tavatar {
+            width: 44px;
+            height: 44px;
+            background: var(--brown-900);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            color: var(--gold);
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+
+        .tname {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--brown-800);
+        }
+
+        .tcity {
+            font-size: 10px;
+            color: var(--brown-500);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* CONTACT */
+        #contact {
+            background: var(--brown-900);
+            padding: 110px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at top left, rgba(139, 94, 60, 0.3) 0%, transparent 55%);
+        }
+
+        .contact-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .contact-info .section-tag {
+            color: rgba(212, 175, 122, 0.65);
+        }
+
+        .contact-info .section-tag::before {
+            background: var(--gold);
+        }
+
+        .contact-info .section-title {
+            color: var(--white);
+        }
+
+        .contact-info .section-title em {
+            color: var(--gold);
+        }
+
+        .contact-desc {
+            font-size: 14px;
+            line-height: 1.9;
+            color: rgba(245, 237, 224, 0.45);
+            font-weight: 300;
+            margin: 20px 0 44px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid rgba(212, 175, 122, 0.12);
+        }
+
+        .cdetail {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(212, 175, 122, 0.12);
+        }
+
+        .cdetail-icon {
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+            border: 1px solid rgba(212, 175, 122, 0.22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 12px;
+        }
+
+        .cdetail-lbl {
+            font-size: 9px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(212, 175, 122, 0.45);
+            margin-bottom: 3px;
+        }
+
+        .cdetail-val {
+            font-size: 13px;
+            color: rgba(245, 237, 224, 0.75);
+            line-height: 1.6;
+        }
+
+        .csocials {
+            display: flex;
+            gap: 10px;
+            margin-top: 36px;
+        }
+
+        .csocial {
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(212, 175, 122, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(212, 175, 122, 0.4);
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .csocial:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .cform-wrap {
+            background: rgba(253, 250, 246, 0.03);
+            border: 1px solid rgba(212, 175, 122, 0.13);
+            padding: 44px;
+        }
+
+        .cform-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .cform-sub {
+            font-size: 10px;
+            color: rgba(212, 175, 122, 0.45);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 36px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .fgroup {
+            margin-bottom: 14px;
+        }
+
+        .flabel {
+            display: block;
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(212, 175, 122, 0.45);
+            margin-bottom: 7px;
+        }
+
+        .finput,
+        .fselect,
+        .ftextarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 122, 0.18);
+            padding: 13px 15px;
+            color: var(--cream);
+            font-family: 'Jost', sans-serif;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.3s;
+            -webkit-appearance: none;
+        }
+
+        .finput::placeholder,
+        .ftextarea::placeholder {
+            color: rgba(212, 175, 122, 0.25);
+        }
+
+        .finput:focus,
+        .fselect:focus,
+        .ftextarea:focus {
+            border-color: rgba(212, 175, 122, 0.5);
+        }
+
+        .fselect option {
+            background: var(--brown-900);
+            color: var(--cream);
+        }
+
+        .ftextarea {
+            resize: none;
+            height: 90px;
+        }
+
+        .fsubmit {
+            width: 100%;
+            padding: 15px;
+            background: var(--gold);
+            color: var(--brown-900);
+            font-family: 'Jost', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 6px;
+        }
+
+        .fsubmit:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--brown-950);
+            padding: 72px 0 0;
+            border-top: 1px solid rgba(212, 175, 122, 0.08);
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 52px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo-icon {
+            width: 34px;
+            height: 34px;
+            border: 1px solid rgba(212, 175, 122, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-logo-icon i {
+            color: var(--gold);
+            font-size: 13px;
+        }
+
+        .footer-logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .footer-desc {
+            font-size: 12px;
+            line-height: 1.85;
+            color: rgba(245, 237, 224, 0.3);
+            font-weight: 300;
+            max-width: 260px;
+            margin-bottom: 28px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 8px;
+        }
+
+        .footer-social {
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(212, 175, 122, 0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(212, 175, 122, 0.35);
+            font-size: 11px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-social:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .fcol-title {
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 22px;
+            font-weight: 500;
+        }
+
+        .flinks {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        .flinks a {
+            font-size: 12px;
+            color: rgba(245, 237, 224, 0.35);
+            text-decoration: none;
+            transition: color 0.3s;
+            letter-spacing: 0.02em;
+        }
+
+        .flinks a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 52px auto 0;
+            padding: 20px 32px;
+            border-top: 1px solid rgba(212, 175, 122, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 11px;
+            color: rgba(245, 237, 224, 0.25);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-bottom-links a {
+            font-size: 10px;
+            color: rgba(245, 237, 224, 0.25);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--gold);
+        }
+
+        /* WHATSAPP FAB */
+        .wa-fab {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 90;
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            background: var(--brown-900);
+            border: 1px solid rgba(212, 175, 122, 0.28);
+            padding: 13px 18px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 6px 25px rgba(26, 14, 8, 0.45);
+        }
+
+        .wa-fab:hover {
+            background: var(--brown-800);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .wa-fab i {
+            color: #25D366;
+            font-size: 17px;
+        }
+
+        .wa-fab span {
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            font-weight: 500;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-l {
+            opacity: 0;
+            transform: translateX(-36px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-l.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-r {
+            opacity: 0;
+            transform: translateX(36px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-r.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .about-inner {
+                grid-template-columns: 1fr;
+                gap: 56px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 56px;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            .hero-stats {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .nav-links,
+            .nav-cta {
+                display: none;
+            }
+
+            .hamburger-btn {
+                display: flex;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .strip {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .tgrid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 14px;
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-inner,
+            .hero-content,
+            .about-inner,
+            .services-inner,
+            .packages-inner,
+            .testimonials-inner,
+            .contact-inner,
+            .footer-inner {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .footer-bottom {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .strip {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .btn-gold,
+            .btn-outline {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">
+                <div class="nav-logo-icon"><i class="fas fa-kaaba"></i></div>
+                <span class="nav-logo-text">Barokah Umroh</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#packages">Paket</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Konsultasi</a>
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="#home">Beranda</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#services">Layanan</a>
+        <a href="#packages">Paket Umroh</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-rings"></div>
+        <div class="hero-content">
+            <div class="hero-tag">
+                <i class="fas fa-star" style="font-size:8px;"></i>
+                Penyelenggara Umroh Terpercaya Sejak 2025
+                <i class="fas fa-star" style="font-size:8px;"></i>
+            </div>
+            <h1 class="hero-title">
+                Perjalanan <em>Suci</em>
+                <span class="sub">Penuh Berkah &amp; Kemuliaan Abadi</span>
+            </h1>
+            <p class="hero-desc">
+                Wujudkan ibadah umroh yang bermakna bersama kami. Pelayanan premium dengan
+                standar internasional, bimbingan spiritual mendalam, dan dedikasi penuh
+                untuk setiap langkah perjalanan suci Anda.
+            </p>
+            <div class="hero-actions">
+                <a href="#packages" class="btn-gold"><i class="fas fa-compass"></i> Lihat Paket Umroh</a>
+                <a href="#contact" class="btn-outline"><i class="fas fa-phone"></i> Konsultasi Gratis</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-num">15K+</div>
+                <div class="hero-stat-label">Jamaah Terlayani</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">4.9</div>
+                <div class="hero-stat-label">Rating Kepuasan</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">15</div>
+                <div class="hero-stat-label">Tahun Pengalaman</div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="hero-scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="about-inner">
+            <div class="reveal-l">
+                <div class="about-card-main">
+                    <p class="about-quote">"Menjadi penyelenggara perjalanan suci yang menghadirkan pengalaman spiritual
+                        terdalam bagi setiap jamaah Indonesia."</p>
+                    <div class="about-quote-author">
+                        <div class="about-quote-line"></div>
+                        <div class="about-quote-label">Visi Barokah Umroh</div>
+                    </div>
+                </div>
+                <div class="about-stats-grid">
+                    <div class="about-stat-box">
+                        <div class="about-stat-num">15K+</div>
+                        <div class="about-stat-lbl">Jamaah Terlayani</div>
+                    </div>
+                    <div class="about-stat-box">
+                        <div class="about-stat-num">4.9★</div>
+                        <div class="about-stat-lbl">Rating Kepuasan</div>
+                    </div>
+                    <div class="about-stat-box">
+                        <div class="about-stat-num">15th</div>
+                        <div class="about-stat-lbl">Tahun Berpengalaman</div>
+                    </div>
+                    <div class="about-stat-box">
+                        <div class="about-stat-num">24/7</div>
+                        <div class="about-stat-lbl">Dukungan Penuh</div>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal-r">
+                <div class="section-tag">Tentang Kami</div>
+                <h2 class="section-title">Lebih dari Sekedar<br><em>Perjalanan Biasa</em></h2>
+                <p class="about-text">Dengan pengalaman lebih dari 15 tahun, Barokah Umroh telah menjadi mitra
+                    terpercaya ribuan jamaah. Kami tidak hanya menyediakan layanan perjalanan — kami menghadirkan
+                    pengalaman spiritual yang bermakna dan tak terlupakan.</p>
+                <ul class="about-list">
+                    <li>
+                        <div class="about-list-icon"><i class="fas fa-certificate"></i></div>
+                        <div>
+                            <h4>Berlisensi Resmi Kemenag RI &amp; IATA</h4>
+                            <p>Terdaftar dan diawasi langsung oleh Kementerian Agama Republik Indonesia</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="about-list-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <h4>Jaminan Visa 100%</h4>
+                            <p>Visa dijamin proses atau uang kembali sepenuhnya tanpa syarat tersembunyi</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="about-list-icon"><i class="fas fa-user-tie"></i></div>
+                        <div>
+                            <h4>Muthowif Bersertifikasi</h4>
+                            <p>Pembimbing berlisensi Arab Saudi dengan pengalaman puluhan tahun</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="about-list-icon"><i class="fas fa-headset"></i></div>
+                        <div>
+                            <h4>Layanan 24/7 Non-Stop</h4>
+                            <p>Tim konsultan siap mendampingi sebelum, selama, dan pasca ibadah</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="services-inner">
+            <div class="services-header reveal">
+                <div class="section-tag">Layanan Kami</div>
+                <h2 class="section-title">Fasilitas <em>Premium</em><br>untuk Ibadah Sempurna</h2>
+                <p>Setiap detail perjalanan dirancang dengan cermat untuk kenyamanan dan kekhusyukan ibadah Anda.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-num">01</div>
+                    <div class="service-icon-wrap"><i class="fas fa-plane"></i></div>
+                    <h3 class="service-title">Tiket Pesawat Premium</h3>
+                    <p class="service-desc">Penerbangan langsung dengan maskapai terpilih, bagasi memadai, dan menu
+                        halal tersertifikasi MUI.</p>
+                    <ul class="service-list">
+                        <li>Saudi Airlines / Emirates</li>
+                        <li>Bagasi 30kg + Kabin 7kg</li>
+                        <li>Menu halal tersertifikasi</li>
+                    </ul>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-num">02</div>
+                    <div class="service-icon-wrap"><i class="fas fa-hotel"></i></div>
+                    <h3 class="service-title">Akomodasi Bintang 5</h3>
+                    <p class="service-desc">Hotel premium dengan lokasi strategis dekat Masjidil Haram dan Masjid
+                        Nabawi.</p>
+                    <ul class="service-list">
+                        <li>Jarak ≤ 300m dari Haram</li>
+                        <li>Kamar superior twin/double</li>
+                        <li>Breakfast &amp; dinner included</li>
+                    </ul>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-num">03</div>
+                    <div class="service-icon-wrap"><i class="fas fa-user-tie"></i></div>
+                    <h3 class="service-title">Muthowif Profesional</h3>
+                    <p class="service-desc">Pembimbing ibadah berpengalaman yang memandu setiap ritual dengan penuh
+                        kehidmatan.</p>
+                    <ul class="service-list">
+                        <li>Lisensi resmi Arab Saudi</li>
+                        <li>Fasih berbahasa Indonesia</li>
+                        <li>Bimbingan penuh 24 jam</li>
+                    </ul>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-num">04</div>
+                    <div class="service-icon-wrap"><i class="fas fa-briefcase-medical"></i></div>
+                    <h3 class="service-title">Kesehatan &amp; Keamanan</h3>
+                    <p class="service-desc">Layanan kesehatan komprehensif dengan tim medis dan asuransi perjalanan
+                        penuh.</p>
+                    <ul class="service-list">
+                        <li>Tim medis standby 24 jam</li>
+                        <li>Asuransi perjalanan lengkap</li>
+                        <li>P3K &amp; obat-obatan khusus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section id="packages">
+        <div class="packages-inner">
+            <div class="packages-header reveal">
+                <div class="section-tag">Paket Umroh</div>
+                <h2 class="section-title">Pilih Paket yang <em>Tepat</em><br>untuk Perjalanan Anda</h2>
+                <p>Semua paket sudah termasuk visa, asuransi perjalanan, dan bimbingan muthowif profesional.</p>
+            </div>
+            <div class="packages-grid reveal">
+                <div class="pkg">
+                    <div class="pkg-header">
+                        <div class="pkg-name">Paket Reguler</div>
+                        <div class="pkg-duration">9 Hari · 8 Malam</div>
+                    </div>
+                    <div class="pkg-price-wrap">
+                        <div class="pkg-price"><sup>Rp</sup>25.500.000</div>
+                        <div class="pkg-price-note">per jamaah · termasuk pajak</div>
+                    </div>
+                    <div class="pkg-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Hotel bintang 4 dekat Haram</li>
+                            <li><i class="fas fa-check"></i> Tiket pesawat Saudi Airlines</li>
+                            <li><i class="fas fa-check"></i> Makan 3x sehari &amp; snack</li>
+                            <li><i class="fas fa-check"></i> City tour Makkah &amp; Madinah</li>
+                            <li><i class="fas fa-check"></i> Ziarah wajib &amp; sunah</li>
+                            <li><i class="fas fa-check"></i> Bimbingan muthowif</li>
+                            <li><i class="fas fa-check"></i> Visa &amp; asuransi</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-cta"><button class="pkg-btn">Pilih Paket <i class="fas fa-arrow-right"
+                                style="font-size:9px;"></i></button></div>
+                </div>
+                <div class="pkg featured">
+                    <div class="pkg-badge">Terpopuler</div>
+                    <div class="pkg-header">
+                        <div class="pkg-name">Paket Premium</div>
+                        <div class="pkg-duration">12 Hari · 11 Malam</div>
+                    </div>
+                    <div class="pkg-price-wrap">
+                        <div class="pkg-price"><sup>Rp</sup>35.750.000</div>
+                        <div class="pkg-price-note">per jamaah · termasuk pajak</div>
+                    </div>
+                    <div class="pkg-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Hotel bintang 5 view Haram</li>
+                            <li><i class="fas fa-check"></i> Tiket pesawat Emirates</li>
+                            <li><i class="fas fa-check"></i> Buffet internasional premium</li>
+                            <li><i class="fas fa-check"></i> Private city tour</li>
+                            <li><i class="fas fa-check"></i> Ziarah lengkap + Thaif</li>
+                            <li><i class="fas fa-check"></i> Muthowif berpengalaman</li>
+                            <li><i class="fas fa-check"></i> Oleh-oleh eksklusif</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-cta"><button class="pkg-btn">Pilih Paket <i class="fas fa-arrow-right"
+                                style="font-size:9px;"></i></button></div>
+                </div>
+                <div class="pkg">
+                    <div class="pkg-header">
+                        <div class="pkg-name">Paket VIP</div>
+                        <div class="pkg-duration">15 Hari · 14 Malam</div>
+                    </div>
+                    <div class="pkg-price-wrap">
+                        <div class="pkg-price"><sup>Rp</sup>48.900.000</div>
+                        <div class="pkg-price-note">per jamaah · termasuk pajak</div>
+                    </div>
+                    <div class="pkg-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Hotel bintang 5 suite room</li>
+                            <li><i class="fas fa-check"></i> First class flight</li>
+                            <li><i class="fas fa-check"></i> Personal butler service</li>
+                            <li><i class="fas fa-check"></i> Exclusive transportation</li>
+                            <li><i class="fas fa-check"></i> Complete ziarah package</li>
+                            <li><i class="fas fa-check"></i> VIP muthowif guidance</li>
+                            <li><i class="fas fa-check"></i> Luxury amenities set</li>
+                        </ul>
+                    </div>
+                    <div class="pkg-cta"><button class="pkg-btn">Pilih Paket <i class="fas fa-arrow-right"
+                                style="font-size:9px;"></i></button></div>
+                </div>
+            </div>
+            <div class="strip reveal">
+                <div class="strip-item"><i class="fas fa-shield-alt"></i>
+                    <h4>Visa Guaranteed</h4>
+                    <p>Jaminan visa atau uang kembali 100% tanpa syarat tersembunyi</p>
+                </div>
+                <div class="strip-item"><i class="fas fa-calendar-check"></i>
+                    <h4>Jadwal Fleksibel</h4>
+                    <p>Berbagai pilihan jadwal keberangkatan sepanjang tahun</p>
+                </div>
+                <div class="strip-item"><i class="fas fa-headset"></i>
+                    <h4>Support 24/7</h4>
+                    <p>Tim konsultan siap membantu kapanpun Anda butuhkan</p>
+                </div>
+                <div class="strip-item"><i class="fas fa-credit-card"></i>
+                    <h4>Cicilan 0%</h4>
+                    <p>Kemudahan cicilan tanpa bunga tersedia untuk semua paket</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <div class="testimonials-inner">
+            <div class="testimonials-header reveal">
+                <div class="section-tag">Testimoni Jamaah</div>
+                <h2 class="section-title">Cerita Nyata dari<br><em>Jamaah Kami</em></h2>
+            </div>
+            <div class="tgrid">
+                <div class="tcard reveal">
+                    <span class="tquote-mark">"</span>
+                    <p class="ttext">Alhamdulillah, perjalanan umroh bersama Barokah Umroh sangat berkesan. Pelayanan
+                        memuaskan, hotel nyaman, dan muthowif sangat membantu setiap ritual. Terima kasih telah
+                        mewujudkan impian saya.</p>
+                    <div class="tstars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="tauthor">
+                        <div class="tavatar">SA</div>
+                        <div>
+                            <div class="tname">Ibu Siti Aminah</div>
+                            <div class="tcity">Jakarta</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tcard reveal">
+                    <span class="tquote-mark">"</span>
+                    <p class="ttext">Pengalaman yang luar biasa! Hotel dekat Haram, makanan lezat, transportasi nyaman.
+                        Yang paling berkesan adalah bimbingan spiritual yang mendalam. Sangat merekomendasikan Barokah
+                        Umroh.</p>
+                    <div class="tstars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="tauthor">
+                        <div class="tavatar">AH</div>
+                        <div>
+                            <div class="tname">Bapak Ahmad Hidayat</div>
+                            <div class="tcity">Surabaya</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tcard reveal">
+                    <span class="tquote-mark">"</span>
+                    <p class="ttext">Subhanallah, perjalanan yang sangat berkesan. Semua fasilitas sesuai janji, tim
+                        sangat profesional. Ini kali kedua saya umroh bersama Barokah Umroh dan tidak pernah
+                        mengecewakan.</p>
+                    <div class="tstars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="tauthor">
+                        <div class="tavatar">FZ</div>
+                        <div>
+                            <div class="tname">Ibu Fatimah Zahra</div>
+                            <div class="tcity">Bandung</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="contact-inner">
+            <div class="contact-info reveal-l">
+                <div class="section-tag">Hubungi Kami</div>
+                <h2 class="section-title">Mulai Rencanakan<br><em>Perjalanan Suci Anda</em></h2>
+                <p class="contact-desc">Tim konsultan profesional kami siap membantu merencanakan perjalanan umroh yang
+                    sempurna. Konsultasi pertama sepenuhnya gratis.</p>
+                <div class="contact-details">
+                    <div class="cdetail">
+                        <div class="cdetail-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <div class="cdetail-lbl">Telepon</div>
+                            <div class="cdetail-val">+62 21 1234 5678<br>+62 812 3456 7890</div>
+                        </div>
+                    </div>
+                    <div class="cdetail">
+                        <div class="cdetail-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <div class="cdetail-lbl">WhatsApp</div>
+                            <div class="cdetail-val">+62 812 3456 7890</div>
+                        </div>
+                    </div>
+                    <div class="cdetail">
+                        <div class="cdetail-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <div class="cdetail-lbl">Email</div>
+                            <div class="cdetail-val">info@barokah-umroh.com<br>konsultasi@barokah-umroh.com</div>
+                        </div>
+                    </div>
+                    <div class="cdetail">
+                        <div class="cdetail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <div class="cdetail-lbl">Kantor</div>
+                            <div class="cdetail-val">Jl. H.R. Rasuna Said Kav. C-5<br>Yogyakarta 55212</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="csocials">
+                    <a href="#" class="csocial" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="csocial" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="csocial" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="csocial" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="cform-wrap reveal-r">
+                <div class="cform-title">Formulir Konsultasi</div>
+                <div class="cform-sub">Isi data Anda — kami segera menghubungi</div>
+                <form>
+                    <div class="form-row">
+                        <div class="fgroup"><label class="flabel">Nama Lengkap</label><input type="text" class="finput"
+                                placeholder="Ahmad Fauzi"></div>
+                        <div class="fgroup"><label class="flabel">Nomor WhatsApp</label><input type="tel" class="finput"
+                                placeholder="+62 812 ..."></div>
+                    </div>
+                    <div class="fgroup"><label class="flabel">Email</label><input type="email" class="finput"
+                            placeholder="email@contoh.com"></div>
+                    <div class="fgroup">
+                        <label class="flabel">Paket yang Diminati</label>
+                        <select class="fselect" aria-label="Pilih Paket">
+                            <option value="">Pilih paket umroh</option>
+                            <option value="reguler">Paket Reguler — 9 Hari</option>
+                            <option value="premium">Paket Premium — 12 Hari</option>
+                            <option value="vip">Paket VIP — 15 Hari</option>
+                        </select>
+                    </div>
+                    <div class="fgroup"><label class="flabel">Pesan / Pertanyaan</label><textarea class="ftextarea"
+                            placeholder="Tulis pertanyaan atau kebutuhan Anda..."></textarea></div>
+                    <button type="submit" class="fsubmit"><i class="fas fa-paper-plane"
+                            style="margin-right:10px;"></i>Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <div class="footer-logo">
+                    <div class="footer-logo-icon"><i class="fas fa-kaaba"></i></div>
+                    <span class="footer-logo-text">Barokah Umroh</span>
+                </div>
+                <p class="footer-desc">Mewujudkan perjalanan suci yang berkesan dengan pelayanan terpercaya, fasilitas
+                    premium, dan bimbingan spiritual mendalam sejak 2025.</p>
+                <div class="footer-socials">
+                    <a href="#" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="footer-social" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <div class="fcol-title">Navigasi</div>
+                <ul class="flinks">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#packages">Paket Umroh</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="fcol-title">Paket</div>
+                <ul class="flinks">
+                    <li><a href="#">Paket Reguler</a></li>
+                    <li><a href="#">Paket Premium</a></li>
+                    <li><a href="#">Paket VIP</a></li>
+                    <li><a href="#">Visa Umroh</a></li>
+                    <li><a href="#">Jadwal 2025</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="fcol-title">Kontak</div>
+                <ul class="flinks">
+                    <li><a href="#">+62 21 1234 5678</a></li>
+                    <li><a href="#">+62 812 3456 7890</a></li>
+                    <li><a href="#">info@barokah-umroh.com</a></li>
+                    <li><a href="#">Yogyakarta 55212</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Barokah Umroh. Hak cipta dilindungi.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Kebijakan Privasi</a>
+                <a href="#">Syarat &amp; Ketentuan</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/6281234567890" class="wa-fab" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>Hubungi via WhatsApp</span>
+    </a>
+
+    <script>
+        // Navbar scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Mobile menu
+        const hBtn = document.getElementById('hamburger-btn');
+        const mNav = document.getElementById('mobile-nav');
+        const mOverlay = document.getElementById('mobile-overlay');
+        const openMenu = () => { hBtn.classList.add('open'); mNav.classList.add('open'); mOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; };
+        const closeMenu = () => { hBtn.classList.remove('open'); mNav.classList.remove('open'); mOverlay.classList.remove('open'); document.body.style.overflow = ''; };
+        hBtn.addEventListener('click', () => mNav.classList.contains('open') ? closeMenu() : openMenu());
+        mOverlay.addEventListener('click', closeMenu);
+        mNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function (e) {
+                e.preventDefault();
+                const t = document.querySelector(this.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Scroll reveal
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+        document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach((el, i) => {
+            el.style.transitionDelay = `${(i % 4) * 0.08}s`;
+            io.observe(el);
+        });
+
+        // Active nav
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', () => {
+            let cur = '';
+            sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) cur = s.id; });
+            navLinks.forEach(l => { l.style.color = l.getAttribute('href') === `#${cur}` ? 'var(--gold)' : ''; });
+        });
+    </script>
+</body>
+
+</html>
