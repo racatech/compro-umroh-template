@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Al-Haramain Travel — Umroh & Haji Premium</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brown: {
+                            50: '#fdf8f3', 100: '#f5e9d8', 200: '#e8cfaf',
+                            300: '#d4aa7d', 400: '#c08850', 500: '#a8692e',
+                            600: '#8b5020', 700: '#6e3b17', 800: '#502b10', 900: '#331a09',
+                        },
+                        gold: {
+                            300: '#f0d080', 400: '#e8b84b', 500: '#d4a017', 600: '#b8860b',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Cormorant Garamond', 'serif'],
+                        arabic: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+
+    <nav id="navbar" class="py-4 px-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full geometric-bg flex items-center justify-center shadow-lg">
+                    <span class="text-gold-300">☽</span>
+                </div>
+                <div>
+                    <div class="font-display font-bold text-white text-lg leading-none">Al-Haramain</div>
+                    <div class="font-tajawal text-brown-400 tracking-widest uppercase" style="font-size:0.6rem;">Travel
+                        & Tour</div>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-7">
+                <a href="#home"
+                    class="text-sm tracking-wide text-stone-200 hover:text-amber-300 transition-colors duration-200"
+                    data-id="nav-home">Beranda</a>
+                <a href="#about"
+                    class="text-sm tracking-wide text-stone-200 hover:text-amber-300 transition-colors duration-200"
+                    data-id="nav-about">Tentang</a>
+                <a href="#services"
+                    class="text-sm tracking-wide text-stone-200 hover:text-amber-300 transition-colors duration-200"
+                    data-id="nav-services">Layanan</a>
+                <a href="#packages"
+                    class="text-sm tracking-wide text-stone-200 hover:text-amber-300 transition-colors duration-200"
+                    data-id="nav-packages">Paket</a>
+                <a href="#gallery"
+                    class="text-sm tracking-wide text-stone-200 hover:text-amber-300 transition-colors duration-200"
+                    data-id="nav-gallery">Galeri</a>
+                <a href="#testimonials"
+                    class="text-sm tracking-wide text-stone-200 hover:text-amber-300 transition-colors duration-200"
+                    data-id="nav-testimonials">Testimoni</a>
+                <a href="#contact"
+                    class="text-sm tracking-wide text-stone-200 hover:text-amber-300 transition-colors duration-200"
+                    data-id="nav-contact">Kontak</a>
+            </div>
+
+            <!-- Right: Lang toggle + CTA + Hamburger -->
+            <div class="flex items-center gap-3">
+                <div class="flex rounded-full overflow-hidden border border-amber-700/40 text-xs">
+                    <button id="lang-id" class="lang-btn active px-3 py-1.5" onclick="setLang('id')">ID</button>
+                    <button id="lang-en" class="lang-btn px-3 py-1.5" onclick="setLang('en')">EN</button>
+                </div>
+                <a href="#packages"
+                    class="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-wide btn-primary"
+                    data-id="nav-cta">
+                    Daftar Sekarang
+                </a>
+                <button id="hamburger" onclick="toggleMenu()" class="lg:hidden text-white p-1">
+                    <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden mobile-menu-bg">
+            <div class="max-w-7xl mx-auto px-6 pb-4 flex flex-col gap-2 pt-3 border-t border-amber-900/30 mt-3">
+                <a href="#home" onclick="closeMenu()" class="py-2 text-stone-200 hover:text-amber-300 transition-colors"
+                    data-id="nav-home">Beranda</a>
+                <a href="#about" onclick="closeMenu()"
+                    class="py-2 text-stone-200 hover:text-amber-300 transition-colors" data-id="nav-about">Tentang</a>
+                <a href="#services" onclick="closeMenu()"
+                    class="py-2 text-stone-200 hover:text-amber-300 transition-colors"
+                    data-id="nav-services">Layanan</a>
+                <a href="#packages" onclick="closeMenu()"
+                    class="py-2 text-stone-200 hover:text-amber-300 transition-colors" data-id="nav-packages">Paket</a>
+                <a href="#gallery" onclick="closeMenu()"
+                    class="py-2 text-stone-200 hover:text-amber-300 transition-colors" data-id="nav-gallery">Galeri</a>
+                <a href="#testimonials" onclick="closeMenu()"
+                    class="py-2 text-stone-200 hover:text-amber-300 transition-colors"
+                    data-id="nav-testimonials">Testimoni</a>
+                <a href="#contact" onclick="closeMenu()"
+                    class="py-2 text-stone-200 hover:text-amber-300 transition-colors" data-id="nav-contact">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <section id="home" class="hero-section min-h-screen flex items-center relative pt-20">
+        <div class="mosque-silhouette"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Left -->
+            <div class="text-center lg:text-left">
+                <div class="arabic-text text-2xl mb-3 fade-up text-gold-400 font-light">بِسْمِ اللّٰهِ الرَّحْمٰنِ
+                    الرَّحِيْمِ</div>
+                <div class="divider-ornament mb-6"><span class="text-brown-400 text-xl">✦</span></div>
+
+                <h1
+                    class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 fade-up-delay-1 text-brown-50">
+                    <span data-id="hero-title-1">Perjalanan Suci</span><br>
+                    <em class="italic text-gold-400" data-id="hero-title-2">Menuju Baitullah</em>
+                </h1>
+
+                <p class="text-lg leading-relaxed mb-8 fade-up-delay-2 max-w-xl mx-auto lg:mx-0 text-brown-300"
+                    data-id="hero-desc">
+                    Kami hadir untuk mewujudkan impian perjalanan ibadah Umroh dan Haji Anda dengan layanan premium,
+                    bimbingan spiritual terpercaya, dan pengalaman tak terlupakan bersama keluarga.
+                </p>
+
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start fade-up-delay-3">
+                    <a href="#packages" class="px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide btn-primary"
+                        data-id="hero-cta1">✦ Daftar Umroh</a>
+                    <a href="#about" class="px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide btn-outline"
+                        data-id="hero-cta2">Selengkapnya</a>
+                </div>
+
+                <!-- Stats -->
+                <div class="mt-12 flex gap-8 justify-center lg:justify-start fade-up-delay-3">
+                    <div class="text-center lg:text-left">
+                        <div class="font-display text-3xl font-bold text-gold-400">15+</div>
+                        <div class="font-tajawal text-brown-400 text-xs tracking-wide mt-1" data-id="stat-1">Tahun
+                            Pengalaman</div>
+                    </div>
+                    <div class="divider-v"></div>
+                    <div class="text-center lg:text-left">
+                        <div class="font-display text-3xl font-bold text-gold-400">12K+</div>
+                        <div class="font-tajawal text-brown-400 text-xs tracking-wide mt-1" data-id="stat-2">Jamaah
+                            Diberangkatkan</div>
+                    </div>
+                    <div class="divider-v"></div>
+                    <div class="text-center lg:text-left">
+                        <div class="font-display text-3xl font-bold text-gold-400">98%</div>
+                        <div class="font-tajawal text-brown-400 text-xs tracking-wide mt-1" data-id="stat-3">Kepuasan
+                            Jamaah</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Visual Card -->
+            <div class="hidden lg:flex justify-center items-center relative">
+                <div class="relative w-80 h-96">
+                    <div class="absolute inset-0 rounded-3xl shadow-2xl overflow-hidden hero-card">
+                        <div class="p-8 h-full flex flex-col justify-between">
+                            <div>
+                                <div class="arabic-text text-5xl mb-4 text-gold-400 opacity-70">الحرمين</div>
+                                <div class="font-tajawal text-brown-300 text-sm tracking-widest uppercase">Al-Haramain
+                                    Travel</div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full flex items-center justify-center bg-card-icon-subtle">
+                                        <span class="text-gold-400 text-sm">🕌</span>
+                                    </div>
+                                    <span class="font-tajawal text-brown-200 text-sm" data-id="card-1">Umroh
+                                        Premium</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full flex items-center justify-center bg-card-icon-subtle">
+                                        <span class="text-gold-400 text-sm">✈️</span>
+                                    </div>
+                                    <span class="font-tajawal text-brown-200 text-sm" data-id="card-2">Haji Reguler &
+                                        Plus</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full flex items-center justify-center bg-card-icon-subtle">
+                                        <span class="text-gold-400 text-sm">⭐</span>
+                                    </div>
+                                    <span class="font-tajawal text-brown-200 text-sm" data-id="card-3">Tersertifikasi
+                                        Kemenag RI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-6 -right-6 w-24 h-24 rounded-full opacity-20 bg-gradient-deco-circle">
+                    </div>
+                    <div class="absolute -bottom-8 -left-8 w-32 h-32 rounded-full opacity-10 bg-gradient-deco-circle">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+            <div class="scroll-indicator">
+                <div class="scroll-dot"></div>
+            </div>
+            <span class="font-tajawal text-brown-400 tracking-widest uppercase" style="font-size:0.6rem;">Scroll</span>
+        </div>
+    </section>
+
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="py-24 pattern-light">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center mb-16">
+                <div class="arabic-text text-3xl mb-2 text-brown-400">عن شركتنا</div>
+                <h2 class="font-display text-4xl font-bold text-brown-900" data-id="about-title">Tentang Al-Haramain
+                    Travel</h2>
+                <div class="section-title-line"></div>
+                <div class="divider-ornament mt-4"><span class="text-brown-400">✦</span></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="rounded-2xl overflow-hidden shadow-xl h-48 bg-gradient-mosaic-1">
+                            <div class="w-full h-full flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-5xl mb-2">🕌</div>
+                                    <div class="font-tajawal text-xs text-amber-200/70">Masjidil Haram</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-xl h-48 mt-8 bg-gradient-mosaic-2">
+                            <div class="w-full h-full flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-5xl mb-2">🌙</div>
+                                    <div class="font-tajawal text-xs text-amber-200/70">Madinah</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-xl h-48 bg-gradient-mosaic-3">
+                            <div class="w-full h-full flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-5xl mb-2">⭐</div>
+                                    <div class="font-tajawal text-xs text-amber-200/70">Bintang 5</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-xl h-48 -mt-8 bg-gradient-mosaic-4">
+                            <div class="w-full h-full flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-5xl mb-2">✈️</div>
+                                    <div class="font-tajawal text-xs text-brown-800">Direct Flight</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -bottom-5 left-1/2 -translate-x-1/2 px-5 py-2.5 rounded-full shadow-lg bg-gradient-brown-dark text-gold-400 font-tajawal font-bold text-xs tracking-wider whitespace-nowrap">
+                        ✦ Izin Kemenag RI No. D/458/2009
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed text-brown-800" data-id="about-p1">
+                        Al-Haramain Travel adalah biro perjalanan ibadah terpercaya yang telah melayani jamaah Indonesia
+                        sejak tahun 2009. Kami berkomitmen menghadirkan perjalanan umroh dan haji yang mabrur, nyaman,
+                        dan berkesan bagi setiap tamu Allah.
+                    </p>
+                    <p class="leading-relaxed text-brown-700" data-id="about-p2">
+                        Dengan pengalaman lebih dari 15 tahun dan lebih dari 12.000 jamaah yang telah kami berangkatkan,
+                        kami terus berinovasi dalam memberikan pelayanan terbaik mulai dari bimbingan manasik, akomodasi
+                        premium, hingga pendampingan selama di Tanah Suci.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div
+                            class="flex items-start gap-3 p-4 rounded-xl card-hover bg-brown-100 border border-brown-200">
+                            <div
+                                class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-gradient-gold text-white">
+                                ✓</div>
+                            <div>
+                                <div class="font-tajawal font-semibold text-sm text-brown-900" data-id="feat-1-title">
+                                    Kemenag Certified</div>
+                                <div class="font-tajawal text-xs text-brown-600 mt-0.5" data-id="feat-1-desc">Terdaftar
+                                    & berizin resmi</div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-start gap-3 p-4 rounded-xl card-hover bg-brown-100 border border-brown-200">
+                            <div
+                                class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-gradient-gold text-white">
+                                🏨</div>
+                            <div>
+                                <div class="font-tajawal font-semibold text-sm text-brown-900" data-id="feat-2-title">
+                                    Hotel Bintang 5</div>
+                                <div class="font-tajawal text-xs text-brown-600 mt-0.5" data-id="feat-2-desc">Dekat
+                                    Masjidil Haram</div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-start gap-3 p-4 rounded-xl card-hover bg-brown-100 border border-brown-200">
+                            <div
+                                class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-gradient-gold text-white">
+                                👨‍🏫</div>
+                            <div>
+                                <div class="font-tajawal font-semibold text-sm text-brown-900" data-id="feat-3-title">
+                                    Ustadz Berpengalaman</div>
+                                <div class="font-tajawal text-xs text-brown-600 mt-0.5" data-id="feat-3-desc">Bimbingan
+                                    intensif</div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-start gap-3 p-4 rounded-xl card-hover bg-brown-100 border border-brown-200">
+                            <div
+                                class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-gradient-gold text-white">
+                                🛡️</div>
+                            <div>
+                                <div class="font-tajawal font-semibold text-sm text-brown-900" data-id="feat-4-title">
+                                    Asuransi Perjalanan</div>
+                                <div class="font-tajawal text-xs text-brown-600 mt-0.5" data-id="feat-4-desc">Proteksi
+                                    penuh jamaah</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="py-24 bg-brown-50">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center mb-16">
+                <div class="arabic-text text-3xl mb-2 text-brown-400">خدماتنا</div>
+                <h2 class="font-display text-4xl font-bold text-brown-900" data-id="services-title">Layanan Kami</h2>
+                <div class="section-title-line"></div>
+                <div class="divider-ornament mt-4"><span class="text-brown-400">✦</span></div>
+                <p class="mt-4 max-w-xl mx-auto text-brown-600" data-id="services-subtitle">Kami menyediakan berbagai
+                    layanan ibadah untuk memastikan perjalanan suci Anda berjalan lancar dan bermakna.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="p-8 rounded-2xl shadow-md card-hover text-center card-service">
+                    <div
+                        class="w-16 h-16 rounded-2xl mx-auto mb-5 flex items-center justify-center text-3xl shadow-md bg-gradient-gold">
+                        🕋</div>
+                    <h3 class="font-display text-xl font-bold mb-3 text-brown-900" data-id="svc-1-title">Umroh Premium
+                    </h3>
+                    <p class="text-sm leading-relaxed text-brown-600" data-id="svc-1-desc">Paket umroh reguler dan
+                        premium dengan hotel bintang 5, penerbangan langsung, dan bimbingan ustadz berpengalaman.</p>
+                    <div class="mt-4 pt-4 border-t border-brown-200">
+                        <span class="font-tajawal text-xs tracking-widest uppercase text-brown-400"
+                            data-id="svc-1-note">Tersedia sepanjang tahun</span>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl shadow-md card-hover text-center card-service">
+                    <div
+                        class="w-16 h-16 rounded-2xl mx-auto mb-5 flex items-center justify-center text-3xl shadow-md bg-gradient-gold">
+                        📿</div>
+                    <h3 class="font-display text-xl font-bold mb-3 text-brown-900" data-id="svc-2-title">Haji Reguler &
+                        Plus</h3>
+                    <p class="text-sm leading-relaxed text-brown-600" data-id="svc-2-desc">Pendaftaran haji reguler dan
+                        haji plus dengan antrean terpendek dan fasilitas terlengkap untuk jamaah Indonesia.</p>
+                    <div class="mt-4 pt-4 border-t border-brown-200">
+                        <span class="font-tajawal text-xs tracking-widest uppercase text-brown-400"
+                            data-id="svc-2-note">Daftar antrean sekarang</span>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl shadow-md card-hover text-center card-service">
+                    <div
+                        class="w-16 h-16 rounded-2xl mx-auto mb-5 flex items-center justify-center text-3xl shadow-md bg-gradient-gold">
+                        📖</div>
+                    <h3 class="font-display text-xl font-bold mb-3 text-brown-900" data-id="svc-3-title">Bimbingan
+                        Manasik</h3>
+                    <p class="text-sm leading-relaxed text-brown-600" data-id="svc-3-desc">Program bimbingan manasik
+                        komprehensif sebelum keberangkatan, termasuk praktek lapangan dan pembekalan doa-doa.</p>
+                    <div class="mt-4 pt-4 border-t border-brown-200">
+                        <span class="font-tajawal text-xs tracking-widest uppercase text-brown-400"
+                            data-id="svc-3-note">Sesi tatap muka & online</span>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl shadow-md card-hover text-center card-service">
+                    <div
+                        class="w-16 h-16 rounded-2xl mx-auto mb-5 flex items-center justify-center text-3xl shadow-md bg-gradient-gold">
+                        🌟</div>
+                    <h3 class="font-display text-xl font-bold mb-3 text-brown-900" data-id="svc-4-title">Wisata Ziarah
+                    </h3>
+                    <p class="text-sm leading-relaxed text-brown-600" data-id="svc-4-desc">Paket wisata religi ke
+                        situs-situs bersejarah Islam di Makkah, Madinah, dan kota-kota bersejarah lainnya di Arab Saudi.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-brown-200">
+                        <span class="font-tajawal text-xs tracking-widest uppercase text-brown-400"
+                            data-id="svc-4-note">Panduan profesional</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== PACKAGES ===== -->
+    <section id="packages" class="py-24 pattern-light">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center mb-16">
+                <div class="arabic-text text-3xl mb-2 text-brown-400">باقات سفرنا</div>
+                <h2 class="font-display text-4xl font-bold text-brown-900" data-id="pkg-title">Paket Umroh</h2>
+                <div class="section-title-line"></div>
+                <div class="divider-ornament mt-4"><span class="text-brown-400">✦</span></div>
+                <p class="mt-4 max-w-xl mx-auto text-brown-600" data-id="pkg-subtitle">Pilih paket yang sesuai dengan
+                    kebutuhan dan anggaran Anda. Semua paket sudah termasuk tiket penerbangan dan akomodasi.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+
+                <!-- Package 1: Ekonomi -->
+                <div class="rounded-2xl shadow-lg overflow-hidden card-hover card-pkg-default flex flex-col">
+                    <div class="p-7 flex-shrink-0 bg-gradient-gold-light">
+                        <div class="font-tajawal text-xs font-bold tracking-widest uppercase mb-2 text-brown-500"
+                            data-id="pkg-1-badge">Paket Hemat</div>
+                        <h3 class="font-display text-2xl font-bold mb-1 text-brown-900" data-id="pkg-1-name">Umroh
+                            Ekonomi</h3>
+                        <div class="flex items-end gap-1 mt-3">
+                            <span class="font-display text-3xl font-bold text-brown-700">Rp 25</span>
+                            <span class="text-lg font-semibold mb-0.5 text-brown-700">juta</span>
+                        </div>
+                        <div class="font-tajawal text-xs mt-1 text-brown-500" data-id="pkg-per-pax">/ per orang</div>
+                    </div>
+                    <div class="p-7 flex flex-col flex-1 bg-white-solid">
+                        <div class="font-tajawal text-xs font-bold tracking-widest uppercase mb-4 text-brown-400"
+                            data-id="pkg-includes">Sudah Termasuk:</div>
+                        <ul class="space-y-2.5 flex-1">
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-1-f1">Tiket pesawat PP (Garuda /
+                                    Saudi Airlines)</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-1-f2">Hotel bintang 3 (Makkah &
+                                    Madinah)</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-1-f3">Makan 3x sehari (katering
+                                    Indonesia)</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-1-f4">Pembimbing ibadah
+                                    bersertifikat</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-1-f5">Perlengkapan ibadah
+                                    lengkap</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-1-f6">Durasi 9 hari 8 malam</span>
+                            </li>
+                        </ul>
+                        <a href="#contact"
+                            class="mt-6 block text-center py-3 rounded-full text-sm font-semibold tracking-wide btn-light"
+                            data-id="pkg-1-btn">Pilih Paket Ini</a>
+                    </div>
+                </div>
+
+                <!-- Package 2: Premium (Featured) -->
+                <div
+                    class="rounded-2xl shadow-2xl overflow-hidden card-hover card-pkg-featured flex flex-col relative -mt-4">
+                    <div
+                        class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 badge-popular px-4 py-1 rounded-full z-10">
+                        ✦ Terpopuler
+                    </div>
+                    <div class="p-7 flex-shrink-0 package-featured">
+                        <div class="font-tajawal text-xs font-bold tracking-widest uppercase mb-2 text-gold-400"
+                            data-id="pkg-2-badge">Paket Terbaik</div>
+                        <h3 class="font-display text-2xl font-bold mb-1 text-white" data-id="pkg-2-name">Umroh Premium
+                        </h3>
+                        <div class="flex items-end gap-1 mt-3">
+                            <span class="font-display text-3xl font-bold text-white">Rp 38</span>
+                            <span class="text-lg font-semibold mb-0.5 text-white">juta</span>
+                        </div>
+                        <div class="font-tajawal text-xs mt-1 text-brown-200" data-id="pkg-2-per">/ per orang</div>
+                    </div>
+                    <div class="p-7 flex flex-col flex-1 bg-white-solid">
+                        <div class="font-tajawal text-xs font-bold tracking-widest uppercase mb-4 text-brown-400"
+                            data-id="pkg-2-includes">Sudah Termasuk:</div>
+                        <ul class="space-y-2.5 flex-1">
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-2-f1">Tiket bisnis class PP (direct
+                                    flight)</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-2-f2">Hotel bintang 5 (200m dari
+                                    Ka'bah)</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-2-f3">Makan 3x + room
+                                    service</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-2-f4">Pembimbing pribadi (1:15
+                                    jamaah)</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-2-f5">City tour Makkah &
+                                    Madinah</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-2-f6">Durasi 12 hari 11
+                                    malam</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-2-f7">Asuransi jiwa &
+                                    kesehatan</span></li>
+                        </ul>
+                        <a href="#contact"
+                            class="mt-6 block text-center py-3 rounded-full text-sm font-semibold tracking-wide btn-primary"
+                            data-id="pkg-2-btn">Pilih Paket Ini</a>
+                    </div>
+                </div>
+
+                <!-- Package 3: VIP -->
+                <div class="rounded-2xl shadow-lg overflow-hidden card-hover card-pkg-default flex flex-col">
+                    <div class="p-7 flex-shrink-0 bg-gradient-brown-dark">
+                        <div class="font-tajawal text-xs font-bold tracking-widest uppercase mb-2 text-gold-400"
+                            data-id="pkg-3-badge">Eksklusif</div>
+                        <h3 class="font-display text-2xl font-bold mb-1 text-white" data-id="pkg-3-name">Umroh VIP Royal
+                        </h3>
+                        <div class="flex items-end gap-1 mt-3">
+                            <span class="font-display text-3xl font-bold text-white">Rp 65</span>
+                            <span class="text-lg font-semibold mb-0.5 text-white">juta</span>
+                        </div>
+                        <div class="font-tajawal text-xs mt-1 text-brown-300" data-id="pkg-3-per">/ per orang</div>
+                    </div>
+                    <div class="p-7 flex flex-col flex-1 bg-white-solid">
+                        <div class="font-tajawal text-xs font-bold tracking-widest uppercase mb-4 text-brown-400"
+                            data-id="pkg-3-includes">Sudah Termasuk:</div>
+                        <ul class="space-y-2.5 flex-1">
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-3-f1">First class / bisnis private
+                                    flight</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-3-f2">Hotel Grand Hyatt / Raffles
+                                    Makkah</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-3-f3">Butler service & concierge 24
+                                    jam</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-3-f4">Pembimbing pribadi
+                                    eksklusif</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-3-f5">Transportasi VIP
+                                    (Mercedes-Benz)</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-3-f6">Durasi 14 hari 13
+                                    malam</span></li>
+                            <li class="flex items-center gap-2.5 text-sm text-brown-800"><span
+                                    class="text-gold-500">✦</span><span data-id="pkg-3-f7">Akses Premium Tawaf area
+                                    eksklusif</span></li>
+                        </ul>
+                        <a href="#contact"
+                            class="mt-6 block text-center py-3 rounded-full text-sm font-semibold tracking-wide btn-dark"
+                            data-id="pkg-3-btn">Pilih Paket Ini</a>
+                    </div>
+                </div>
+
+            </div>
+            <p class="text-center mt-8 text-sm font-tajawal text-brown-500" data-id="pkg-note">
+                * Harga dapat berubah sewaktu-waktu. Hubungi kami untuk informasi terkini dan promo spesial.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ===== GALLERY ===== -->
+    <section id="gallery" class="py-24 bg-brown-50">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center mb-16">
+                <div class="arabic-text text-3xl mb-2 text-brown-400">معرض صور</div>
+                <h2 class="font-display text-4xl font-bold text-brown-900" data-id="gallery-title">Galeri Perjalanan
+                </h2>
+                <div class="section-title-line"></div>
+                <div class="divider-ornament mt-4"><span class="text-brown-400">✦</span></div>
+                <p class="mt-4 max-w-xl mx-auto text-brown-600" data-id="gallery-subtitle">Sekilas momen berharga para
+                    jamaah kami di Tanah Suci Makkah dan Madinah.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+                <div class="gallery-item col-span-2 row-span-2 h-64 md:h-auto" style="min-height:280px;">
+                    <div class="w-full h-full rounded-2xl flex items-center justify-center bg-gradient-gal-1">
+                        <div class="text-center p-6">
+                            <div class="text-6xl mb-3">🕋</div>
+                            <div class="font-display text-xl font-bold text-white">Masjidil Haram</div>
+                            <div class="font-tajawal text-xs mt-1 text-brown-300" data-id="gal-makkah">Makkah
+                                Al-Mukarramah</div>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay rounded-2xl">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <div class="font-display text-lg font-semibold">Masjidil Haram</div>
+                            <div class="font-tajawal text-xs text-amber-300" data-id="gal-haram-caption">Pusat Ibadah
+                                Umat Islam</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-40">
+                    <div class="w-full h-full rounded-2xl flex items-center justify-center bg-gradient-gal-2">
+                        <div class="text-center">
+                            <div class="text-3xl">🌙</div>
+                            <div class="font-tajawal text-xs text-amber-200 mt-1" data-id="gal-2">Bulan Ramadan</div>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay rounded-2xl"></div>
+                </div>
+
+                <div class="gallery-item h-40">
+                    <div class="w-full h-full rounded-2xl flex items-center justify-center bg-gradient-gal-3">
+                        <div class="text-center">
+                            <div class="text-3xl">🏛️</div>
+                            <div class="font-tajawal text-xs text-amber-200 mt-1" data-id="gal-3">Masjid Nabawi</div>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay rounded-2xl"></div>
+                </div>
+
+                <div class="gallery-item h-40">
+                    <div class="w-full h-full rounded-2xl flex items-center justify-center bg-gradient-gal-4">
+                        <div class="text-center">
+                            <div class="text-3xl">🌅</div>
+                            <div class="font-tajawal text-xs text-stone-800 mt-1" data-id="gal-4">Fajar di Arafah</div>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay rounded-2xl"></div>
+                </div>
+
+                <div class="gallery-item h-40">
+                    <div class="w-full h-full rounded-2xl flex items-center justify-center bg-gradient-gal-5">
+                        <div class="text-center">
+                            <div class="text-3xl">🤲</div>
+                            <div class="font-tajawal text-xs text-stone-700 mt-1" data-id="gal-5">Berdoa Bersama</div>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay rounded-2xl"></div>
+                </div>
+
+                <div class="gallery-item h-40">
+                    <div class="w-full h-full rounded-2xl flex items-center justify-center bg-gradient-gal-6">
+                        <div class="text-center">
+                            <div class="text-3xl">⭐</div>
+                            <div class="font-tajawal text-xs text-amber-200 mt-1" data-id="gal-6">Malam di Makkah</div>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay rounded-2xl"></div>
+                </div>
+
+                <div class="gallery-item h-40">
+                    <div class="w-full h-full rounded-2xl flex items-center justify-center bg-gradient-gal-7">
+                        <div class="text-center">
+                            <div class="text-3xl">✈️</div>
+                            <div class="font-tajawal text-xs text-amber-200 mt-1" data-id="gal-7">Pemberangkatan</div>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay rounded-2xl"></div>
+                </div>
+
+                <div class="gallery-item h-40">
+                    <div class="w-full h-full rounded-2xl flex items-center justify-center bg-gradient-gal-8">
+                        <div class="text-center">
+                            <div class="text-3xl">🎓</div>
+                            <div class="font-tajawal text-xs text-stone-700 mt-1" data-id="gal-8">Manasik Umroh</div>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay rounded-2xl"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section id="testimonials" class="py-24 geometric-bg relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 pointer-events-none"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+
+            <div class="text-center mb-16">
+                <div class="arabic-text text-3xl mb-2 text-gold-400">شهادات</div>
+                <h2 class="font-display text-4xl font-bold text-white" data-id="testi-title">Kata Jamaah Kami</h2>
+                <div class="section-title-line"></div>
+                <div class="divider-ornament mt-4"><span class="text-gold-400">✦</span></div>
+                <p class="mt-4 max-w-xl mx-auto text-amber-200/70" data-id="testi-subtitle">Kepercayaan dan kepuasan
+                    jamaah adalah prioritas utama kami dalam setiap perjalanan ibadah.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="p-8 rounded-2xl card-hover testi-card">
+                    <div class="quote-mark">"</div>
+                    <p class="mt-2 mb-6 leading-relaxed text-amber-50/90" data-id="testi-1-text">
+                        Alhamdulillah, perjalanan umroh bersama Al-Haramain benar-benar luar biasa. Hotel sangat dekat
+                        dengan Masjidil Haram, pembimbingnya sabar dan profesional. Insyaallah akan kembali untuk umroh
+                        berikutnya!
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold bg-gradient-gold text-brown-900">
+                            H</div>
+                        <div>
+                            <div class="font-tajawal font-semibold text-white">Hj. Siti Rahayu</div>
+                            <div class="font-tajawal text-xs mt-0.5 text-brown-300" data-id="testi-1-city">Jakarta, 2023
+                            </div>
+                        </div>
+                        <div class="ml-auto stars text-sm">★★★★★</div>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl card-hover testi-card-featured">
+                    <div class="quote-mark">"</div>
+                    <p class="mt-2 mb-6 leading-relaxed text-amber-50/90" data-id="testi-2-text">
+                        Saya sangat terkesan dengan pelayanan Al-Haramain. Dari manasik hingga kepulangan, semua
+                        terorganisir dengan sangat baik. Tidak ada hambatan apapun. Terima kasih telah membantu ibadah
+                        kami menjadi sempurna.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold bg-gradient-gold text-brown-900">
+                            A</div>
+                        <div>
+                            <div class="font-tajawal font-semibold text-white">Ahmad Fauzi, S.E.</div>
+                            <div class="font-tajawal text-xs mt-0.5 text-brown-300" data-id="testi-2-city">Surabaya,
+                                2023</div>
+                        </div>
+                        <div class="ml-auto stars text-sm">★★★★★</div>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl card-hover testi-card">
+                    <div class="quote-mark">"</div>
+                    <p class="mt-2 mb-6 leading-relaxed text-amber-50/90" data-id="testi-3-text">
+                        Paket VIP Royal benar-benar beyond expectation. Kamar hotel dengan view langsung Ka'bah,
+                        transportasi mewah, dan ustadz pembimbing yang sangat berpengetahuan. Worth every penny untuk
+                        ibadah yang mabrur.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold bg-gradient-gold text-brown-900">
+                            D</div>
+                        <div>
+                            <div class="font-tajawal font-semibold text-white">Dr. Dewi Kartika</div>
+                            <div class="font-tajawal text-xs mt-0.5 text-brown-300" data-id="testi-3-city">Bandung, 2024
+                            </div>
+                        </div>
+                        <div class="ml-auto stars text-sm">★★★★★</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="py-24 bg-brown-50">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center mb-16">
+                <div class="arabic-text text-3xl mb-2 text-brown-400">تواصل معنا</div>
+                <h2 class="font-display text-4xl font-bold text-brown-900" data-id="contact-title">Hubungi Kami</h2>
+                <div class="section-title-line"></div>
+                <div class="divider-ornament mt-4"><span class="text-brown-400">✦</span></div>
+                <p class="mt-4 max-w-xl mx-auto text-brown-600" data-id="contact-subtitle">Konsultasikan perjalanan
+                    ibadah impian Anda bersama tim kami. Kami siap membantu 24/7.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+
+                <!-- Info -->
+                <div class="space-y-6">
+
+                    <div class="flex items-start gap-5 p-6 rounded-2xl card-hover card-contact">
+                        <div
+                            class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center text-xl bg-gradient-gold">
+                            📍</div>
+                        <div>
+                            <div class="font-tajawal font-semibold mb-1 text-brown-900" data-id="contact-addr-label">
+                                Alamat Kantor</div>
+                            <div class="text-sm leading-relaxed text-brown-700" data-id="contact-addr">Jl. Sudirman No.
+                                88, Lantai 5<br>Jakarta Pusat 10220, Indonesia</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-5 p-6 rounded-2xl card-hover card-contact">
+                        <div
+                            class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center text-xl bg-gradient-icon-wa">
+                            💬</div>
+                        <div>
+                            <div class="font-tajawal font-semibold mb-1 text-brown-900" data-id="contact-wa-label">
+                                WhatsApp</div>
+                            <a href="https://wa.me/6281234567890" class="text-sm hover:underline text-brown-700">+62
+                                812-3456-7890</a>
+                            <div class="font-tajawal text-xs mt-1 text-brown-500" data-id="contact-wa-note">Aktif 24 jam
+                                / 7 hari</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-5 p-6 rounded-2xl card-hover card-contact">
+                        <div
+                            class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center text-xl bg-gradient-gold">
+                            ✉️</div>
+                        <div>
+                            <div class="font-tajawal font-semibold mb-1 text-brown-900" data-id="contact-email-label">
+                                Email</div>
+                            <a href="mailto:info@alharamain-travel.co.id"
+                                class="text-sm hover:underline text-brown-700">info@alharamain-travel.co.id</a>
+                            <div class="font-tajawal text-xs mt-1 text-brown-500" data-id="contact-email-note">Balasan
+                                dalam 1x24 jam</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-5 p-6 rounded-2xl card-hover card-contact">
+                        <div
+                            class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center text-xl bg-gradient-gold">
+                            🕐</div>
+                        <div>
+                            <div class="font-tajawal font-semibold mb-1 text-brown-900" data-id="contact-hours-label">
+                                Jam Operasional</div>
+                            <div class="text-sm text-brown-700" data-id="contact-hours">Senin – Jumat: 08.00 – 17.00
+                                WIB<br>Sabtu: 08.00 – 13.00 WIB</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Form -->
+                <div class="p-8 rounded-2xl shadow-lg card-contact">
+                    <h3 class="font-display text-2xl font-bold mb-6 text-brown-900" data-id="form-title">Kirim Pesan
+                    </h3>
+
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block font-tajawal text-sm font-medium mb-1.5 text-brown-700"
+                                    data-id="form-name">Nama Lengkap</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-xl text-sm form-input"
+                                    placeholder="Nama Anda" />
+                            </div>
+                            <div>
+                                <label class="block font-tajawal text-sm font-medium mb-1.5 text-brown-700"
+                                    data-id="form-phone">No. WhatsApp</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-xl text-sm form-input"
+                                    placeholder="+62..." />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block font-tajawal text-sm font-medium mb-1.5 text-brown-700"
+                                data-id="form-email">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-xl text-sm form-input"
+                                placeholder="email@anda.com" />
+                        </div>
+
+                        <div>
+                            <label class="block font-tajawal text-sm font-medium mb-1.5 text-brown-700"
+                                data-id="form-package">Paket yang Diminati</label>
+                            <select class="w-full px-4 py-3 rounded-xl text-sm appearance-none form-input">
+                                <option data-id="form-opt-select">Pilih paket...</option>
+                                <option data-id="form-opt-1">Umroh Ekonomi – Rp 25 juta</option>
+                                <option data-id="form-opt-2">Umroh Premium – Rp 38 juta</option>
+                                <option data-id="form-opt-3">Umroh VIP Royal – Rp 65 juta</option>
+                                <option data-id="form-opt-4">Haji Plus</option>
+                                <option data-id="form-opt-5">Konsultasi Lainnya</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block font-tajawal text-sm font-medium mb-1.5 text-brown-700"
+                                data-id="form-msg">Pesan</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl text-sm resize-none form-input"
+                                data-id="form-placeholder" placeholder="Ceritakan kebutuhan ibadah Anda..."></textarea>
+                        </div>
+
+                        <button onclick="submitForm()"
+                            class="w-full py-3.5 rounded-xl font-semibold text-sm tracking-wide btn-primary"
+                            data-id="form-submit">
+                            ✦ Kirim Pesan
+                        </button>
+                    </div>
+
+                    <div id="form-success"
+                        class="hidden mt-4 p-4 rounded-xl text-center bg-form-success border border-green-300">
+                        <div class="text-green-700 font-tajawal font-semibold" data-id="form-success-msg">
+                            ✓ Pesan terkirim! Kami akan segera menghubungi Anda.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="pt-16 pb-8 bg-black-deep border-t border-brown-deep">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-footer-divider">
+
+                <!-- Brand -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full geometric-bg flex items-center justify-center">
+                            <span class="text-gold-300">☽</span>
+                        </div>
+                        <div>
+                            <div class="font-display font-bold text-white text-lg leading-none">Al-Haramain</div>
+                            <div class="font-tajawal text-brown-400 tracking-widest uppercase"
+                                style="font-size:0.6rem;">Travel & Tour</div>
+                        </div>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-5 text-brown-500" data-id="footer-desc">Melayani ibadah umroh
+                        dan haji dengan sepenuh hati sejak 2009.</p>
+                    <div class="arabic-text text-xl text-gold-400 opacity-70">الله أكبر</div>
+                </div>
+
+                <!-- Nav links -->
+                <div>
+                    <div class="font-tajawal font-semibold mb-4 text-white" data-id="footer-nav">Navigasi</div>
+                    <ul class="space-y-2.5">
+                        <li><a href="#home" class="text-sm footer-link" data-id="footer-l1">Beranda</a></li>
+                        <li><a href="#about" class="text-sm footer-link" data-id="footer-l2">Tentang Kami</a></li>
+                        <li><a href="#services" class="text-sm footer-link" data-id="footer-l3">Layanan</a></li>
+                        <li><a href="#packages" class="text-sm footer-link" data-id="footer-l4">Paket Umroh</a></li>
+                        <li><a href="#gallery" class="text-sm footer-link" data-id="footer-l5">Galeri</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services links -->
+                <div>
+                    <div class="font-tajawal font-semibold mb-4 text-white" data-id="footer-services">Layanan</div>
+                    <ul class="space-y-2.5">
+                        <li><a href="#packages" class="text-sm footer-link" data-id="footer-s1">Umroh Reguler</a></li>
+                        <li><a href="#packages" class="text-sm footer-link" data-id="footer-s2">Umroh Premium</a></li>
+                        <li><a href="#packages" class="text-sm footer-link" data-id="footer-s3">Umroh VIP Royal</a></li>
+                        <li><a href="#services" class="text-sm footer-link" data-id="footer-s4">Haji Plus</a></li>
+                        <li><a href="#services" class="text-sm footer-link" data-id="footer-s5">Wisata Ziarah</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social + Cert -->
+                <div>
+                    <div class="font-tajawal font-semibold mb-4 text-white" data-id="footer-follow">Ikuti Kami</div>
+                    <div class="flex gap-3 mb-6">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full flex items-center justify-center text-sm social-btn">f</a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full flex items-center justify-center text-sm social-btn">in</a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full flex items-center justify-center text-sm social-btn">▶</a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full flex items-center justify-center text-sm social-btn">📸</a>
+                    </div>
+                    <div class="text-xs p-3 rounded-lg footer-cert-box">
+                        <div class="font-bold mb-1 text-gold-400" data-id="footer-cert">Tersertifikasi</div>
+                        <div data-id="footer-cert-1">✓ Kemenag RI No. D/458/2009</div>
+                        <div data-id="footer-cert-2">✓ IATA Accredited Agent</div>
+                        <div data-id="footer-cert-3">✓ Anggota AMPHURI</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-sm text-center sm:text-left text-brown-700" data-id="footer-copy">
+                    © 2024 Al-Haramain Travel & Tour. Seluruh hak cipta dilindungi.
+                </p>r
+                <div class="flex gap-5 text-xs font-tajawal text-brown-700">
+                    <a href="#" class="hover:text-amber-600 transition-colors" data-id="footer-privacy">Kebijakan
+                        Privasi</a>
+                    <a href="#" class="hover:text-amber-600 transition-colors" data-id="footer-terms">Syarat &
+                        Ketentuan</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>
